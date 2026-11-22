@@ -165,7 +165,6 @@ function shuffleArray<T>(arr: T[]): T[] {
 function generateExamQuiz(count = 20): ExamQuestion[] {
   const pool: ExamQuestion[] = []
 
-  // History questions (Year -> Event / Event -> Year)
   const histShuffled = shuffleArray(ALL_HISTORY_EVENTS).slice(0, 8)
   for (const ev of histShuffled) {
     const distractors = shuffleArray(
@@ -185,7 +184,6 @@ function generateExamQuiz(count = 20): ExamQuestion[] {
     }
   }
 
-  // Polity questions (Article/Amendment -> Title)
   const allPolityItems = ALL_POLITY_LOCKERS.flatMap((l) => l.items)
   const polShuffled = shuffleArray(allPolityItems).slice(0, 7)
   for (const item of polShuffled) {
@@ -206,7 +204,6 @@ function generateExamQuiz(count = 20): ExamQuestion[] {
     }
   }
 
-  // Static GK Map questions (Location -> State)
   const mapShuffled = shuffleArray(ALL_GEO_PINS).slice(0, 7)
   for (const pin of mapShuffled) {
     const distractors = shuffleArray(
@@ -241,18 +238,19 @@ export default function Page() {
   const [studioOpen, setStudioOpen] = useState(false)
   const [activeTab, setActiveTab] = useState<'chrono' | 'vault' | 'topograph'>('chrono')
 
-  // Tab 1: Chrono-Roots State (All 220+ Events)
+  // Tab 1: Chrono-Roots State
   const [selectedEra, setSelectedEra] = useState<HistoryEra>('Modern')
+  const [polityLinkedOnly, setPolityLinkedOnly] = useState(false)
   const [historySearch, setHistorySearch] = useState('')
   const [selectedHistoryId, setSelectedHistoryId] = useState<string>('mod-36')
   const [showChronoPopup, setShowChronoPopup] = useState<boolean>(true)
 
-  // Tab 2: Constitutional Vault State (All Lockers + Individual Articles/Amendments)
+  // Tab 2: Constitutional Vault State
   const [vaultFilter, setVaultFilter] = useState<PolityCategory>('All')
   const [vaultSearch, setVaultSearch] = useState('')
   const [openLockerId, setOpenLockerId] = useState<string>('pv-3')
 
-  // Tab 3: TopoGraph 3D Map State (All 160+ Real India Locations)
+  // Tab 3: TopoGraph 3D Map State
   const [topoFilter, setTopoFilter] = useState<TopoCategory>('All')
   const [mapSearch, setMapSearch] = useState('')
   const [showMapSidebar, setShowMapSidebar] = useState(true)
@@ -287,18 +285,30 @@ export default function Page() {
     return counts
   }, [])
 
+  const linkedCount = useMemo(
+    () => ALL_HISTORY_EVENTS.filter((ev) => Boolean(ev.polityId)).length,
+    []
+  )
+
   const visibleHistoryEvents = useMemo(() => {
     const q = historySearch.trim().toLowerCase()
-    if (q) {
-      return ALL_HISTORY_EVENTS.filter(
-        (ev) =>
-          ev.year.toLowerCase().includes(q) ||
-          ev.title.toLowerCase().includes(q) ||
-          ev.note.toLowerCase().includes(q)
-      )
+    let list = q
+      ? ALL_HISTORY_EVENTS.filter(
+          (ev) =>
+            ev.year.toLowerCase().includes(q) ||
+            ev.title.toLowerCase().includes(q) ||
+            ev.note.toLowerCase().includes(q) ||
+            (ev.polityReason ? ev.polityReason.toLowerCase().includes(q) : false)
+        )
+      : polityLinkedOnly
+      ? ALL_HISTORY_EVENTS.filter((ev) => Boolean(ev.polityId))
+      : ALL_HISTORY_EVENTS.filter((ev) => ev.era === selectedEra)
+
+    if (q && polityLinkedOnly) {
+      list = list.filter((ev) => Boolean(ev.polityId))
     }
-    return ALL_HISTORY_EVENTS.filter((ev) => ev.era === selectedEra)
-  }, [selectedEra, historySearch])
+    return list
+  }, [selectedEra, historySearch, polityLinkedOnly])
 
   const activeHistoryEvent = useMemo<HistoryEventItem | null>(() => {
     return (
@@ -308,6 +318,11 @@ export default function Page() {
       null
     )
   }, [selectedHistoryId, visibleHistoryEvents])
+
+  const activeHistoryPolity = useMemo(() => {
+    if (!activeHistoryEvent?.polityId) return null
+    return polityById.get(activeHistoryEvent.polityId) || null
+  }, [activeHistoryEvent, polityById])
 
   const visibleLockers = useMemo(() => {
     return vaultFilter === 'All'
@@ -391,7 +406,6 @@ export default function Page() {
     }
   }
 
-  // Non-passive wheel zoom listener (eliminates browser console warning)
   useEffect(() => {
     if (!studioOpen || activeTab !== 'topograph') return
     const el = mapStageRef.current
@@ -437,6 +451,7 @@ export default function Page() {
   }
 
   const jumpToChronoEvent = (era: HistoryEra, eventId: string) => {
+    setPolityLinkedOnly(false)
     setSelectedEra(era)
     setHistorySearch('')
     setSelectedHistoryId(eventId)
@@ -581,19 +596,19 @@ export default function Page() {
           </header>
 
           {/* ============================================================== */}
-          {/* TAB 1: CHRONO-ROOTS MAP (ALL 220+ EVENTS + SEARCH + POLITY LINK) */}
+          {/* TAB 1: CHRONO-ROOTS MAP (VERIFIED POLITY LINKS ONLY)           */}
           {/* ============================================================== */}
           {activeTab === 'chrono' && (
             <div className="relative flex flex-1 flex-col overflow-hidden bg-[#060f1d]">
-              {/* Top Filter & Search Strip */}
               <div className="z-20 flex flex-wrap items-center justify-between gap-2 border-b border-cyan-500/20 bg-[#081525]/95 px-4 py-2.5 backdrop-blur-xl">
                 <div className="flex flex-wrap items-center gap-1.5">
                   {(['Ancient', 'Medieval', 'Modern', 'World'] as const).map((era) => {
-                    const active = !historySearch.trim() && selectedEra === era
+                    const active = !historySearch.trim() && !polityLinkedOnly && selectedEra === era
                     return (
                       <button
                         key={era}
                         onClick={() => {
+                          setPolityLinkedOnly(false)
                           setHistorySearch('')
                           setSelectedEra(era)
                           const first = ALL_HISTORY_EVENTS.find((e) => e.era === era)
@@ -612,6 +627,17 @@ export default function Page() {
                       </button>
                     )
                   })}
+
+                  <button
+                    onClick={() => setPolityLinkedOnly((v) => !v)}
+                    className={`rounded-lg border px-3 py-1 text-xs font-bold transition ${
+                      polityLinkedOnly
+                        ? 'border-amber-300 bg-amber-500/25 text-amber-100 shadow-[0_0_12px_rgba(245,158,11,0.4)]'
+                        : 'border-amber-700/60 bg-amber-950/30 text-amber-300/85 hover:border-amber-400 hover:text-amber-100'
+                    }`}
+                  >
+                    ⚖️ Polity-Linked Only ({linkedCount})
+                  </button>
                 </div>
 
                 <div className="flex items-center gap-2">
@@ -619,7 +645,7 @@ export default function Page() {
                     type="text"
                     value={historySearch}
                     onChange={(e) => setHistorySearch(e.target.value)}
-                    placeholder="Search year, battle, ruler (e.g. 1757, Akbar, Waterloo)..."
+                    placeholder="Search year, battle, ruler, or constitutional link..."
                     className="w-64 rounded-lg border border-cyan-500/35 bg-slate-950/90 px-3 py-1.5 text-xs text-white placeholder:text-slate-500 focus:border-cyan-300 focus:outline-none sm:w-80"
                   />
                   {historySearch && (
@@ -634,9 +660,8 @@ export default function Page() {
               </div>
 
               {/* Neural Trunk Timeline */}
-              <div className="flex-1 overflow-y-auto px-3 py-6 pb-48 sm:px-6">
+              <div className="flex-1 overflow-y-auto px-3 py-6 pb-52 sm:px-6">
                 <div className="relative mx-auto max-w-5xl">
-                  {/* Glowing Central Neural Spine */}
                   <div
                     aria-hidden="true"
                     className="pointer-events-none absolute top-0 bottom-0 left-5 w-1.5 rounded-full bg-gradient-to-b from-cyan-400 via-cyan-500 to-rose-500 opacity-75 shadow-[0_0_18px_rgba(34,211,238,0.55)] md:left-1/2 md:-translate-x-1/2"
@@ -645,28 +670,37 @@ export default function Page() {
                   <div className="space-y-4">
                     {visibleHistoryEvents.map((ev) => {
                       const isSel = activeHistoryEvent?.id === ev.id
-                      const linkedPolity = polityById.get(ev.polityId) || ALL_POLITY_LOCKERS[0]
+                      const linkedPolity = ev.polityId ? polityById.get(ev.polityId) || null : null
                       return (
                         <div
                           key={ev.id}
                           id={`hist-node-${ev.id}`}
                           className="relative grid grid-cols-1 items-center gap-2 pl-12 md:grid-cols-[1fr_120px_1fr] md:gap-4 md:pl-0"
                         >
-                          {/* Left Amber Polity Root (Desktop) */}
+                          {/* Left Amber Polity Root — ONLY rendered when a verified historical reference exists */}
                           <div className="hidden justify-end md:flex">
-                            <button
-                              onClick={() => jumpToVaultLocker(linkedPolity.id)}
-                              className="group flex max-w-xs items-center gap-2 rounded-xl border border-amber-500/50 bg-[#241808]/90 px-3 py-2 text-right transition hover:border-amber-300 hover:bg-[#33220c]"
-                            >
-                              <div className="min-w-0">
-                                <p className="truncate text-[11px] font-bold text-amber-200">
+                            {linkedPolity ? (
+                              <button
+                                onClick={() => jumpToVaultLocker(linkedPolity.id)}
+                                className="group flex max-w-sm flex-col items-end rounded-xl border border-amber-500/60 bg-[#241808]/92 px-3 py-2 text-right transition hover:border-amber-300 hover:bg-[#33220c]"
+                              >
+                                <p className="font-mono text-[10px] font-bold text-amber-400">
+                                  ⚖️ {linkedPolity.articlesRange} · Open Vault ↗
+                                </p>
+                                <p className="text-[11px] font-extrabold text-amber-100">
                                   {linkedPolity.title}
                                 </p>
-                                <p className="truncate font-mono text-[10px] text-amber-400">
-                                  {linkedPolity.articlesRange} · Vault ↗
-                                </p>
+                                {ev.polityReason && (
+                                  <p className="mt-0.5 line-clamp-2 text-[10px] leading-snug text-amber-200/80">
+                                    {ev.polityReason}
+                                  </p>
+                                )}
+                              </button>
+                            ) : (
+                              <div className="pr-2 font-mono text-[10px] text-slate-600/70">
+                                {ev.era} Chronicle
                               </div>
-                            </button>
+                            )}
                           </div>
 
                           {/* Center Year Hub */}
@@ -708,9 +742,11 @@ export default function Page() {
                               <span className="font-mono text-[10px] font-bold text-cyan-300 uppercase">
                                 {ev.era} · {ev.year}
                               </span>
-                              <span className="rounded bg-amber-500/20 px-1.5 py-0.5 font-mono text-[9px] font-bold text-amber-300 md:hidden">
-                                ⚖️ {linkedPolity.lockerCode}
-                              </span>
+                              {linkedPolity && (
+                                <span className="rounded bg-amber-500/20 px-1.5 py-0.5 font-mono text-[9px] font-bold text-amber-300">
+                                  ⚖️ {linkedPolity.lockerCode}
+                                </span>
+                              )}
                             </div>
                             <h3 className="mt-0.5 text-sm font-extrabold text-white">{ev.title}</h3>
                             <p className="mt-0.5 text-xs text-slate-300">{ev.note}</p>
@@ -752,18 +788,21 @@ export default function Page() {
                     <strong className="text-cyan-300">Key Exam Note:</strong> {activeHistoryEvent.note}
                   </p>
 
-                  {(() => {
-                    const locker = polityById.get(activeHistoryEvent.polityId) || ALL_POLITY_LOCKERS[0]
-                    return (
-                      <button
-                        onClick={() => jumpToVaultLocker(locker.id)}
-                        className="mt-3 w-full rounded-xl border border-amber-400/70 bg-amber-950/60 px-3 py-2 text-left text-xs font-semibold text-amber-200 transition hover:bg-amber-900/70"
-                      >
-                        <strong className="text-amber-300">Connected Polity Vault:</strong> {locker.title} ({locker.articlesRange}){' '}
-                        <span className="underline">Open Vault ↗</span>
-                      </button>
-                    )
-                  })()}
+                  {activeHistoryPolity && (
+                    <button
+                      onClick={() => jumpToVaultLocker(activeHistoryPolity.id)}
+                      className="mt-3 w-full rounded-xl border border-amber-400/70 bg-amber-950/60 px-3 py-2 text-left text-xs text-amber-100 transition hover:bg-amber-900/70"
+                    >
+                      <p className="font-bold text-amber-300">
+                        ⚖️ Connected Polity Vault: {activeHistoryPolity.title} ({activeHistoryPolity.articlesRange}) ↗
+                      </p>
+                      {activeHistoryEvent.polityReason && (
+                        <p className="mt-1 text-[11px] leading-relaxed text-amber-100/90">
+                          <strong>Historical Reference:</strong> {activeHistoryEvent.polityReason}
+                        </p>
+                      )}
+                    </button>
+                  )}
                 </div>
               )}
             </div>
@@ -837,7 +876,6 @@ export default function Page() {
                   </div>
                 </div>
 
-                {/* Global Search Results View */}
                 {vaultSearch.trim() ? (
                   <div className="rounded-2xl border-2 border-amber-400 bg-[#191106]/95 p-4">
                     <div className="mb-3 flex items-center justify-between border-b border-amber-500/30 pb-2">
@@ -944,7 +982,7 @@ export default function Page() {
                             onClick={() => jumpToChronoEvent(activeLocker.historyEra, activeLocker.historyId)}
                             className="rounded-xl border-2 border-cyan-400 bg-cyan-950/80 px-3.5 py-2 text-xs font-bold text-cyan-200 shadow-[0_0_18px_rgba(34,211,238,0.35)] hover:bg-cyan-900"
                           >
-                            🌿 Trace Root in Chrono-Roots: {activeLocker.historyLabel} ⬅
+                            🌿 Trace Historical Root: {activeLocker.historyLabel} ⬅
                           </button>
                         </div>
 
@@ -973,7 +1011,6 @@ export default function Page() {
           {/* ============================================================== */}
           {activeTab === 'topograph' && (
             <div className="relative flex-1 overflow-hidden bg-[#040b16]">
-              {/* Mobile/Desktop Sidebar Toggle Button */}
               <button
                 onClick={() => setShowMapSidebar((v) => !v)}
                 className="fixed top-14 left-3 z-40 rounded-lg border border-cyan-400/60 bg-[#071426]/95 px-2.5 py-1 font-mono text-[10px] font-bold text-cyan-200 shadow-lg hover:bg-cyan-500/25"
@@ -981,7 +1018,6 @@ export default function Page() {
                 {showMapSidebar ? '◀ Hide List' : `▶ Locations (${visiblePins.length})`}
               </button>
 
-              {/* Left Floating HUD */}
               {showMapSidebar && (
                 <aside className="fixed top-22 left-3 z-30 flex max-h-[80vh] w-64 flex-col gap-2 rounded-2xl border border-cyan-400/35 bg-[#071426]/92 p-3 shadow-2xl backdrop-blur-xl">
                   <div className="flex items-center justify-between">
@@ -1062,7 +1098,6 @@ export default function Page() {
                 </aside>
               )}
 
-              {/* Top-Right 3D Camera Controller */}
               <div className="fixed top-14 right-4 z-30 flex flex-col gap-2 rounded-2xl border border-cyan-400/35 bg-[#071426]/92 p-3 shadow-2xl backdrop-blur-xl">
                 <div className="flex items-center justify-between gap-3">
                   <span className="font-mono text-[10px] font-bold text-cyan-300 uppercase">
@@ -1148,7 +1183,6 @@ export default function Page() {
                 </div>
               </div>
 
-              {/* 3D Terrain India Map Stage (Mouse + Touch Panning) */}
               <div
                 ref={mapStageRef}
                 onMouseDown={(e) => {
@@ -1199,7 +1233,6 @@ export default function Page() {
                       </linearGradient>
                     </defs>
 
-                    {/* 3D Extruded Mainland Base */}
                     <path d={indiaMainlandPath} transform="translate(18, 30)" fill="#082f49" opacity="0.45" />
                     <path d={indiaMainlandPath} transform="translate(12, 20)" fill="#0c4a6e" opacity="0.55" />
                     <path d={indiaMainlandPath} transform="translate(6, 10)" fill="#0369a1" opacity="0.7" />
@@ -1211,7 +1244,6 @@ export default function Page() {
                       strokeLinejoin="round"
                     />
 
-                    {/* Tropic of Cancer & IST Meridian */}
                     <g opacity="0.45">
                       <line
                         x1="110"
@@ -1239,7 +1271,6 @@ export default function Page() {
                       </text>
                     </g>
 
-                    {/* 3D Terrain Massifs */}
                     {showTerrain3D &&
                       TERRAIN_MASSIFS.map((ter) => {
                         const basePath = coordsToSvgPath(ter.coords, true)
@@ -1268,7 +1299,6 @@ export default function Page() {
                         )
                       })}
 
-                    {/* Major River Systems */}
                     {showRivers &&
                       GEO_RIVERS.map((riv) => {
                         const isSel = activeRiver.id === riv.id
@@ -1295,7 +1325,6 @@ export default function Page() {
                         )
                       })}
 
-                    {/* Georeferenced Static GK Pins */}
                     {visiblePins.map((pin) => {
                       const pt = latLngToXY(pin.lat, pin.lng)
                       const isSel = pin.id === selectedPinId
@@ -1362,7 +1391,6 @@ export default function Page() {
                 </div>
               </div>
 
-              {/* Bottom-Right Active Location Inspection Card */}
               {showTopoPopup && activePin && (
                 <div className="fixed right-4 bottom-4 z-30 flex max-w-xl flex-wrap items-center gap-3 rounded-2xl border border-cyan-300/65 bg-[#071628]/95 p-4 shadow-[0_0_45px_rgba(6,182,212,0.45)] backdrop-blur-2xl sm:flex-nowrap">
                   <div className="max-w-sm space-y-1.5">
