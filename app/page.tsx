@@ -518,20 +518,32 @@ export default function Page() {
       {/* 1. VOLT OS DESKTOP (ALWAYS OPENS FIRST) */}
       <Desktop />
 
-      {/* 2. BOTTOM-RIGHT SWITCH PILL (ABOVE ASK VOLT AI) */}
-      {!studioOpen && (
-        <div className="fixed right-4 bottom-16 z-[9990]">
-          <button
-            onClick={() => setStudioOpen(true)}
-            title="Open Chrono-Roots, Constitutional Vault & 3D TopoGraph"
-            className="flex items-center gap-2 rounded-full border border-cyan-300 bg-slate-950/95 px-4 py-2 text-xs font-bold tracking-wide text-cyan-100 shadow-[0_0_24px_rgba(34,211,238,0.45)] backdrop-blur-md transition hover:border-white hover:bg-cyan-500/25 hover:text-white"
-          >
-            <span className="size-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]" />
-            GK/GS Studio
-          </button>
-        </div>
-      )}
-
+     {/* 2. CLEAN TOP-BAR LAUNCHER (HIGH Z-INDEX — 100% CLICKABLE ON DESKTOP & MOBILE) */}
+   {!studioOpen && (
+     <div className="fixed top-1.5 left-1/2 z-[9990] -translate-x-1/2">
+       <button
+         onClick={() => setStudioOpen(true)}
+         title="Open Chrono-Roots, Constitutional Vault & 3D TopoGraph"
+         className="group flex h-7 items-center gap-1.5 rounded-full border border-cyan-400/55 bg-gradient-to-r from-[#081c2e]/95 via-[#0d273f]/95 to-[#162138]/95 px-2.5 text-[11px] font-bold tracking-wide text-cyan-100 shadow-[0_0_16px_rgba(34,211,238,0.28)] backdrop-blur-md transition hover:border-cyan-300 hover:shadow-[0_0_22px_rgba(34,211,238,0.55)] sm:h-8 sm:gap-2 sm:px-3.5 sm:text-xs"
+       >
+         <svg
+           viewBox="0 0 24 24"
+           fill="none"
+           className="size-3.5 shrink-0 text-cyan-300 transition-transform duration-300 group-hover:rotate-12 sm:size-4"
+           aria-hidden="true"
+         >
+           <circle cx="12" cy="12" r="9.5" stroke="currentColor" strokeWidth="1.7" />
+           <ellipse cx="12" cy="12" rx="4.2" ry="9.5" stroke="currentColor" strokeWidth="1.4" />
+           <path d="M2.8 12h18.4" stroke="currentColor" strokeWidth="1.4" />
+           <path d="M12 2.5l1.6 4.4L18 8.5l-4.4 1.6L12 14.5l-1.6-4.4L6 8.5l4.4-1.6L12 2.5z" fill="#fbbf24" opacity="0.9" />
+         </svg>
+         <span className="bg-gradient-to-r from-cyan-100 via-white to-amber-200 bg-clip-text text-transparent">
+           <span className="sm:hidden">GS Studio</span>
+           <span className="hidden sm:inline">GK/GS Studio</span>
+         </span>
+       </button>
+     </div>
+   )}
       {/* 3. FULL-SCREEN 3-TAB UNCOMPRESSED GK/GS STUDIO */}
       {studioOpen && (
         <div className="fixed inset-0 z-[9999] flex flex-col overflow-hidden bg-[#06101e] text-slate-100 select-none">
