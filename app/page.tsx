@@ -60,178 +60,213 @@ interface TrunkHub {
 
 const CHRONO_HUBS: TrunkHub[] = [
   {
-    id: 'hub-modern-1',
-    era: 'Modern',
-    yearLabel: '1757–1857',
-    polityLeaves: [
-      { id: 'pl-1773', title: '1773 SC Calcutta & UPSC', articleBadge: 'Art 124 & Art 315', lockerId: 'pv-5' },
-      { id: 'pl-1858', title: '1858 Crown Sovereignty', articleBadge: 'Part I (Art 1–4)', lockerId: 'pv-1' },
-    ],
-    historyLeaves: [
-      {
-        id: 'hl-1757', dateBadge: '23 Jun 1757 & 1764', title: 'Plassey (1757) & Buxar (1764)', subtitle: 'Clive, Munro & 1765 Diwani Treaty', stars: 3,
-        cause: 'EIC military expansion under Robert Clive (Plassey 1757) and Hector Munro (Buxar 1764 vs Mir Qasim, Shuja-ud-Daulah & Shah Alam II).',
-        effect: 'Treaty of Allahabad (1765) granted EIC Diwani (revenue) rights over Bengal, Bihar, and Orissa.',
-        polityLinkText: 'Initiated British Parliamentary oversight leading to Part V Executive & Revenue separation.', polityLockerId: 'pv-5',
-        quizQ: 'Which 1765 treaty granted the East India Company Diwani rights of Bengal, Bihar, and Orissa?',
-        quizOpts: ['Treaty of Alinagar', 'Treaty of Allahabad', 'Treaty of Salbai', 'Treaty of Bassein'], quizAns: 1,
-      },
-      {
-        id: 'hl-1773', dateBadge: '1773 to 1853 Acts', title: 'Regulating Act 1773 to Charter 1853', subtitle: 'Calcutta SC (1774), Bentinck (1833) & ICS', stars: 3,
-        cause: 'Administrative corruption in EIC forced British Parliamentary regulation every 20 years.',
-        effect: '1773: Warren Hastings 1st GG of Bengal & Calcutta SC (1774). 1833: Bentinck 1st GG of India. 1853: Open ICS merit exam.',
-        polityLinkText: 'Direct institutional ancestor of the Supreme Court (Art 124) and UPSC Open Merit System (Art 315).', polityLockerId: 'pv-5',
-        quizQ: 'Which Charter Act made Lord William Bentinck the first Governor-General of India?',
-        quizOpts: ['Regulating Act 1773', 'Charter Act 1813', 'Charter Act 1833', 'Charter Act 1853'], quizAns: 2,
-      },
-      {
-        id: 'hl-1857', dateBadge: '10 May 1857', title: 'Revolt of 1857 & GOI Act 1858', subtitle: 'Meerut Mutiny, Lakshmibai & Crown Rule', stars: 3,
-        cause: 'Doctrine of Lapse (Satara 1848, Jhansi 1853, Awadh 1856) and greased Enfield cartridges (Mangal Pandey, Meerut).',
-        effect: 'East India Company abolished; GOI Act 1858 transferred power to the British Crown with Lord Canning as 1st Viceroy.',
-        polityLinkText: 'Direct trigger for Crown-to-Republic sovereignty transfer (Part I, Art 1).', polityLockerId: 'pv-1',
-        quizQ: 'Who became the first Viceroy of India under the Government of India Act 1858?',
-        quizOpts: ['Lord Dalhousie', 'Lord Canning', 'Lord Ripon', 'Lord Curzon'], quizAns: 1,
-      },
-    ],
-  },
-  {
-    id: 'hub-modern-2',
-    era: 'Modern',
-    yearLabel: '1885–1919',
-    scarred: true,
-    polityLeaves: [
-      { id: 'pl-parl', title: 'Parliamentary System', articleBadge: 'Part V (Art 79–122)', lockerId: 'pv-5' },
-      { id: 'pl-fr', title: 'Part III: Fundamental Rights', articleBadge: 'Art 19, 21 & 22 Safeguards', lockerId: 'pv-3' },
-    ],
-    historyLeaves: [
-      {
-        id: 'hl-1885', dateBadge: '28 Dec 1885', title: 'Formation of INC (Bombay)', subtitle: 'A.O. Hume, W.C. Bonnerjee (72 Delegates)', stars: 3,
-        cause: 'Need for an all-India political platform under Viceroy Lord Dufferin at Gokuldas Tejpal Sanskrit College.',
-        effect: '1st Pres: W.C. Bonnerjee (1885); 1st Muslim Pres: Badruddin Tyabji (1887); 1st Indian Woman: Sarojini Naidu (1925).',
-        polityLinkText: 'Created the legislative debate culture enshrined in Part V (Art 79–105).', polityLockerId: 'pv-5',
-        quizQ: 'Who presided over the first session of the Indian National Congress in December 1885?',
-        quizOpts: ['Dadabhai Naoroji', 'W.C. Bonnerjee', 'Badruddin Tyabji', 'George Yule'], quizAns: 1,
-      },
-      {
-        id: 'hl-1905', dateBadge: '16 Oct 1905', title: 'Partition of Bengal & Swadeshi', subtitle: 'Lord Curzon, Boycott & 1906 Calcutta INC', stars: 3,
-        cause: 'Lord Curzon divided Bengal on 16 October 1905; observed as Raksha Bandhan Day.',
-        effect: 'Launched Swadeshi & Boycott movement; Partition annulled at 1911 Delhi Durbar (Capital shifted Calcutta → Delhi).',
-        polityLinkText: 'Shaped Art 3 (State reorganization) and Swadeshi cottage industries (Art 43).', polityLockerId: 'pv-1',
-        quizQ: 'During which Viceroy’s tenure was the Partition of Bengal enforced on 16 October 1905?',
-        quizOpts: ['Lord Minto', 'Lord Curzon', 'Lord Hardinge', 'Lord Chelmsford'], quizAns: 1,
-      },
-      {
-        id: 'hl-1919', dateBadge: '10 Mar & 13 Apr 1919', title: 'Rowlatt Act & Jallianwala Bagh', subtitle: 'Amritsar Massacre & Tagore’s Renunciation', stars: 3, scarred: true,
-        cause: 'Rowlatt Act ("No Dalil, No Vakil, No Appeal") allowed detention without trial.',
-        effect: 'General Dyer fired on a peaceful Baisakhi crowd in Amritsar (13 April 1919); Tagore renounced Knighthood.',
-        polityLinkText: 'Direct inspiration for Part III Fundamental Rights — Speech (Art 19), Life/Liberty (Art 21) & Arrest Protection (Art 22).', polityLockerId: 'pv-3',
-        quizQ: 'Which Part of the Indian Constitution was directly inspired by the struggle against the 1919 Rowlatt Act?',
-        quizOpts: ['Part II: Citizenship', 'Part III: Fundamental Rights', 'Part IV: DPSP', 'Part IVA: Fundamental Duties'], quizAns: 1,
-      },
-    ],
-  },
-  {
-    id: 'hub-modern-3',
-    era: 'Modern',
-    yearLabel: '1929–1950',
-    polityLeaves: [
-      { id: 'pl-1935', title: '7th Schedule & Emergency', articleBadge: 'Part XI & XVIII', lockerId: 'pv-11' },
-      { id: 'pl-1950', title: '12 Schedules & Amendments', articleBadge: 'Preamble & Art 368', lockerId: 'pv-schedules' },
-    ],
-    historyLeaves: [
-      {
-        id: 'hl-1929', dateBadge: '1929–1932', title: 'Lahore Purna Swaraj, Dandi & Poona Pact', subtitle: 'Nehru (1929), Salt March (1930) & Ambedkar (1932)', stars: 3,
-        cause: 'Boycott of Simon Commission (1928) and Lahore INC (Dec 1929) declaring 26 Jan 1930 as Purna Swaraj Day.',
-        effect: 'Dandi March (12 Mar–6 Apr 1930, 78 followers) and Poona Pact (24 Sept 1932 between Gandhi & Dr. B.R. Ambedkar).',
-        polityLinkText: 'Why 26 Jan was chosen as Republic Day + Art 330/332 SC/ST Seat Reservations.', polityLockerId: 'pv-11',
-        quizQ: 'Between whom was the Poona Pact of 24 September 1932 signed?',
-        quizOpts: ['Gandhi and Lord Irwin', 'Gandhi and Dr. B.R. Ambedkar', 'Nehru and Jinnah', 'Subhas Bose and Patel'], quizAns: 1,
-      },
-      {
-        id: 'hl-1935', dateBadge: '2 Aug 1935', title: 'Government of India Act 1935', subtitle: 'Provincial Autonomy, 3 Lists, RBI & Federal Court', stars: 3,
-        cause: 'Culmination of the 3 Round Table Conferences (1930–32).',
-        effect: 'Introduced Provincial Autonomy, Federal/Provincial/Concurrent Lists, RBI (1935) and Federal Court (1937).',
-        polityLinkText: 'Single largest structural blueprint (~60% skeleton) of the 1950 Constitution.', polityLockerId: 'pv-11',
-        quizQ: 'Which Act serves as the single largest structural source (~60%) for the Constitution of India?',
-        quizOpts: ['GOI Act 1858', 'Indian Councils Act 1909', 'GOI Act 1919', 'GOI Act 1935'], quizAns: 3,
-      },
-      {
-        id: 'hl-1946', dateBadge: '1946–26 Jan 1950', title: 'Cabinet Mission & Constituent Assembly', subtitle: 'Rajendra Prasad, B.R. Ambedkar & B.N. Rau', stars: 3,
-        cause: 'Cabinet Mission (1946) constituted the 389-member Constituent Assembly.',
-        effect: '1st Met: 9 Dec 1946; Drafting Committee Chairman: Dr. B.R. Ambedkar; Advisor: Sir B.N. Rau. Adopted 26 Nov 1949; enforced 26 Jan 1950.',
-        polityLinkText: 'Created the Preamble, 22 Parts, 395 Articles, and 12 Schedules ("TEARS OF OLD PM").', polityLockerId: 'pv-schedules',
-        quizQ: 'Who was the Constitutional Advisor to the Constituent Assembly of India?',
-        quizOpts: ['Dr. B.R. Ambedkar', 'Sir B.N. Rau', 'K.M. Munshi', 'Dr. Rajendra Prasad'], quizAns: 1,
-      },
-    ],
-  },
-  {
     id: 'hub-ancient-1',
     era: 'Ancient',
-    yearLabel: '2500 BCE–1014 CE',
+    yearLabel: '2500–261 BCE',
     polityLeaves: [
-      { id: 'pl-ivc', title: 'Part IXA: Urban Municipalities', articleBadge: 'Art 243P–ZG · 12th Sch', lockerId: 'pv-9a' },
-      { id: 'pl-dpsp-a', title: 'Part IV: Welfare State & Panchayats', articleBadge: 'Art 38 & Art 243K', lockerId: 'pv-4' },
+      { id: 'pl-ivc', title: 'Part IXA: Urban Civic Grid', articleBadge: 'Art 243P–ZG · 12th Sch', lockerId: 'pv-9' },
+      { id: 'pl-dpsp-a', title: 'Part IV: Welfare & Dhamma', articleBadge: 'Art 38 & Art 40', lockerId: 'pv-4' },
     ],
     historyLeaves: [
       {
-        id: 'hl-ivc1', dateBadge: '2500–1750 BCE', title: 'Indus Valley: Harappa, Mohenjo-Daro & Dholavira', subtitle: 'Grid Drainage, Lothal Dockyard & 3-Part City', stars: 3,
-        cause: 'Bronze-age urban planning with grid streets and covered brick drainage across the Indus basin.',
-        effect: 'Harappa (1921, Dayaram Sahni), Mohenjo-Daro (1922, R.D. Banerji), Lothal (Tidal Dockyard), Dholavira (40th UNESCO site).',
-        polityLinkText: 'Urban sanitation & municipal town planning under Part IXA (12th Schedule).', polityLockerId: 'pv-9a',
-        quizQ: 'Which Indus Valley site in Gujarat is divided into three parts and famous for giant water reservoirs?',
-        quizOpts: ['Lothal', 'Dholavira', 'Surkotada', 'Rakhigarhi'], quizAns: 1,
+        id: 'hl-ivc', dateBadge: '2500–1750 BC', title: 'Indus Valley Civilization', subtitle: 'Bronze-age urban culture & civic planning', stars: 3,
+        cause: 'Settled riverine urbanism in the Indus basin with planned streets and drainage.',
+        effect: 'Established early bronze-age urban culture across Harappa, Mohenjo-Daro, Lothal, and Dholavira.',
+        polityLinkText: 'Urban sanitation & municipal planning under Part IXA (12th Schedule).', polityLockerId: 'pv-9',
+        quizQ: 'Which period marks the Indus Valley Civilization in the GS timeline?',
+        quizOpts: ['2500–1750 BC', '563–483 BC', '322 BC', '78 AD'], quizAns: 0,
       },
       {
-        id: 'hl-mau', dateBadge: '322–185 BCE', title: 'Maurya Empire & Kalinga Rock Edict XIII', subtitle: 'Chandragupta, Chanakya & Ashoka’s Dhamma', stars: 3,
-        cause: 'Kalinga War (261 BCE) transformed Ashoka toward Dhammavijaya and public welfare.',
-        effect: 'Sarnath Lion Capital (National Emblem) & 14 Major Rock Edicts (deciphered by James Prinsep in 1837).',
-        polityLinkText: 'Direct inspiration for the Welfare State in Part IV (DPSP, Art 38) and National Emblem.', polityLockerId: 'pv-4',
-        quizQ: 'Who deciphered Emperor Ashoka’s Brahmi script edicts in 1837?',
-        quizOpts: ['Alexander Cunningham', 'James Prinsep', 'William Jones', 'Max Muller'], quizAns: 1,
+        id: 'hl-bud-jain', dateBadge: '563–483 & 540–468 BC', title: 'Buddha & Mahavir Era', subtitle: 'Buddhism & 24th Jain Tirthankara', stars: 3,
+        cause: 'Spiritual and ethical reform movements in eastern India.',
+        effect: 'Gautama Buddha (563–483 BC) founded Buddhism; Mahavir (540–468 BC) was the 24th Tirthankara of Jainism.',
+        polityLinkText: 'Freedom of conscience & religion under Articles 25–28.', polityLockerId: 'pv-3',
+        quizQ: 'Mahavir was the __ Tirthankara of Jainism?',
+        quizOpts: ['1st', '12th', '23rd', '24th'], quizAns: 3,
       },
       {
-        id: 'hl-cho', dateBadge: '985–1014 CE', title: 'Imperial Cholas & Uttaramerur Ballot', subtitle: 'Rajaraja I, Rajendra I & Village Sabhas', stars: 3,
-        cause: 'Autonomous Tamil village assemblies (Ur & Sabha) with written eligibility rules.',
-        effect: 'Brihadeeswarar Temple (Thanjavur) and Uttaramerur Inscription (Kudavolai lottery ballot for village committees).',
-        polityLinkText: 'Historical bedrock of Grassroots Panchayati Raj Elections (Part IX, Art 243K).', polityLockerId: 'pv-9',
-        quizQ: 'Which Chola inscription details village assembly elections via the Kudavolai system?',
-        quizOpts: ['Aihole Inscription', 'Uttaramerur Inscription', 'Junagadh Inscription', 'Hathigumpha Inscription'], quizAns: 1,
+        id: 'hl-maurya', dateBadge: '327–261 BC', title: 'Chandragupta Maurya & Kalinga (261 BC)', subtitle: 'Seleucus (305 BC), Ashoka & Dhamma', stars: 3,
+        cause: 'Mauryan expansion under Chandragupta (322 BC), defeat of Seleucus (305 BC), and Ashoka’s Kalinga campaign (261 BC).',
+        effect: 'Marked a turning point in Ashoka’s policy toward Dhamma, edicts, and welfare administration.',
+        polityLinkText: 'Welfare state principles in Part IV (DPSP) and National Emblem.', polityLockerId: 'pv-4',
+        quizQ: 'Which war in 261 BC marked a turning point in Emperor Ashoka’s policy?',
+        quizOpts: ['Battle of Hydaspes', 'Conquest of Kalinga', 'Battle of Tarain', 'Battle of Talikota'], quizAns: 1,
+      },
+    ],
+  },
+  {
+    id: 'hub-ancient-2',
+    era: 'Ancient',
+    yearLabel: '58 BC–647 AD',
+    polityLeaves: [
+      { id: 'pl-cal', title: 'National Calendar & Heritage', articleBadge: 'Saka Era (78 AD)', lockerId: 'pv-1' },
+      { id: 'pl-mon', title: 'Monuments & State Policy', articleBadge: 'Art 49 DPSP', lockerId: 'pv-4' },
+    ],
+    historyLeaves: [
+      {
+        id: 'hl-eras', dateBadge: '58 BC & 78 AD', title: 'Vikrama Era (58 BC) & Saka Era (78 AD)', subtitle: 'Kanishka’s reign & Indian eras', stars: 3,
+        cause: 'Chronological systems adopted by Indian dynasties and astronomers.',
+        effect: 'Vikrama era began in 58 BC; Saka era began in 78 AD associated with Kushana ruler Kanishka (78–101 AD).',
+        polityLinkText: 'Saka era forms the basis of India’s official national calendar.', polityLockerId: 'pv-1',
+        quizQ: 'The Saka era beginning in 78 AD is associated with which ruler?',
+        quizOpts: ['Chandragupta II', 'Kanishka', 'Harshavardhan', 'Skandagupta'], quizAns: 1,
+      },
+      {
+        id: 'hl-gupta', dateBadge: '319–455 AD', title: 'Gupta Era, Vikramaditya & Fahien', subtitle: 'Chandragupta II (380 AD), Kumaragupta & Skandagupta', stars: 3,
+        cause: 'Rise of the Gupta dynasty starting in 319–320 AD.',
+        effect: 'Chandragupta II "Vikramaditya" (380 AD), Fahien’s visit (405–411 AD), Kumaragupta I (415 AD), and Skandagupta (455 AD).',
+        polityLinkText: 'Classical art & temple traditions preserved under Art 49.', polityLockerId: 'pv-4',
+        quizQ: 'During whose reign did Chinese traveller Fahien visit India (405–411 AD)?',
+        quizOpts: ['Ashoka', 'Chandragupta II', 'Harshavardhan', 'Rajaraja Chola'], quizAns: 1,
+      },
+      {
+        id: 'hl-harsha', dateBadge: '606–647 AD', title: 'Harshavardhan of Kannauj', subtitle: 'North Indian ruler (606–647 AD)', stars: 2,
+        cause: 'Consolidation of power at Kannauj after the Guptas.',
+        effect: 'Harshavardhan ruled from 606 to 647 AD as a major ruler of Kannauj.',
+        polityLinkText: 'Administrative continuity across north India.', polityLockerId: 'pv-5',
+        quizQ: 'Harshavardhan (606–647 AD) was the ruler of which city?',
+        quizOpts: ['Pataliputra', 'Kannauj', 'Taxila', 'Madurai'], quizAns: 1,
       },
     ],
   },
   {
     id: 'hub-med-1',
     era: 'Medieval',
-    yearLabel: '1206–1674 CE',
+    yearLabel: '712–1526',
     polityLeaves: [
-      { id: 'pl-sult', title: 'Part XII: Revenue & Price Control', articleBadge: 'Market & Revenue Audit', lockerId: 'pv-11' },
-      { id: 'pl-ash', title: 'Part V: Portfolio Cabinet', articleBadge: 'Art 74–75 (Ashtapradhan)', lockerId: 'pv-5' },
+      { id: 'pl-rev', title: 'Part XII: Revenue & State', articleBadge: 'Land & Market Audit', lockerId: 'pv-11' },
+      { id: 'pl-local', title: 'Part IX: Local Governance', articleBadge: 'Provincial & Village', lockerId: 'pv-9' },
     ],
     historyLeaves: [
       {
-        id: 'hl-khi', dateBadge: '1296–1320 CE', title: 'Alauddin Khilji: Market Control & Dagh', subtitle: 'Shahna-i-Mandi, Chehra & Cash Salaries', stars: 3,
-        cause: 'Need to maintain a large standing army against Mongol invasions without price inflation.',
-        effect: 'Strict price control (Diwan-i-Riyasat & Shahna-i-Mandi), Dagh (horse branding) & Chehra (soldier roll).',
-        polityLinkText: 'Precursor to Essential Commodities Price Regulation & Defence Audit.', polityLockerId: 'pv-11',
-        quizQ: 'Which Delhi Sultan introduced Dagh (branding of horses) and Chehra (descriptive roll of soldiers)?',
-        quizOpts: ['Iltutmish', 'Balban', 'Alauddin Khilji', 'Firoz Shah Tughlaq'], quizAns: 2,
+        id: 'hl-arab-ghazni', dateBadge: '712, 985 & 1001–1025', title: 'Sindh (712), Cholas (985) & Ghazni', subtitle: 'Mohd. Bin Qasim, Rajaraja Chola & Somnath (1025)', stars: 3,
+        cause: 'Early Arab entry into Sindh (712) and raids by Sultan Mahmud Ghazni from 1001.',
+        effect: 'Rajaraja Chola acceded in 985; Ghazni defeated Jaipal (1001) and raided Somnath Temple (1025).',
+        polityLinkText: 'Temple & heritage protection under Art 49.', polityLockerId: 'pv-4',
+        quizQ: 'In which year did Mahmud Ghazni attack and destroy the Somnath Temple?',
+        quizOpts: ['1001', '1025', '1191', '1206'], quizAns: 1,
       },
       {
-        id: 'hl-akb', dateBadge: '1556–1605 CE', title: 'Akbar: Mansabdari, Zabti & Sulh-i-Kul', subtitle: 'Panipat II (1556), Todar Mal & Ibadat Khana', stars: 3,
-        cause: 'Administrative consolidation across 15 Subahs with uniform revenue measurement.',
-        effect: 'Mansabdari (Zat & Sawar ranks), Raja Todar Mal’s 10-year Zabti / Ain-i-Dahsala (1580), abolition of Jizya (1564).',
-        polityLinkText: 'All-India Civil Cadre hierarchy & Secular State neutrality (Preamble & Art 25).', polityLockerId: 'pv-3',
-        quizQ: 'Who was the chief architect of Emperor Akbar’s Zabti / Ain-i-Dahsala land revenue system?',
-        quizOpts: ['Abul Fazl', 'Raja Todar Mal', 'Birbal', 'Man Singh'], quizAns: 1,
+        id: 'hl-sultanate', dateBadge: '1191–1398', title: 'Tarain (1191/92), Delhi Sultanate & Timur', subtitle: 'Aibak (1206), Razia (1236), Khilji & Tughlaq (1327)', stars: 3,
+        cause: 'Ghori’s victory at Second Battle of Tarain (1192) leading to the Delhi Sultanate.',
+        effect: 'Qutbuddin Aibak (1206), Razia Sultana (1236), Alauddin Khilji (1296–1316), Muhammad-bin-Tughlaq capital shift to Daulatabad (1327), and Timur (1398).',
+        polityLinkText: 'Centralized revenue & administrative shifts (Part XII).', polityLockerId: 'pv-11',
+        quizQ: 'Who was the first female ruler of the Delhi Sultanate (acceding in 1236)?',
+        quizOpts: ['Nurjahan', 'Razia Sultana', 'Durgavati', 'Chand Bibi'], quizAns: 1,
       },
       {
-        id: 'hl-shi', dateBadge: '6 June 1674', title: 'Chhatrapati Shivaji Maharaj (Raigad)', subtitle: 'Ashtapradhan Council & Hindavi Swarajya', stars: 3,
-        cause: 'Coronation at Raigad Fort (1674) establishing sovereign Maratha administration.',
-        effect: '8-Minister Ashtapradhan Council: Peshwa (PM), Amatya (Finance), Sumant (Foreign Affairs), Mantri, Sachiv, Senapati, Panditrao, Nyayadhish.',
-        polityLinkText: 'Direct indigenous model for the Union Council of Ministers (Articles 74 & 75).', polityLockerId: 'pv-5',
-        quizQ: 'In Chhatrapati Shivaji Maharaj’s Ashtapradhan council, who was in charge of Foreign Affairs?',
-        quizOpts: ['Peshwa', 'Amatya', 'Sumant (Dabir)', 'Sachiv'], quizAns: 2,
+        id: 'hl-vij-panipat1', dateBadge: '1336, 1498 & 1526', title: 'Vijayanagar (1336), Vasco da Gama & Panipat I', subtitle: 'Harihara & Bukka, 1498 Sea Route & Babur (1526)', stars: 3,
+        cause: 'Southern empire building (1336), Portuguese arrival (1497–98), and Babur’s invasion (1526).',
+        effect: 'Vijayanagar founded by Harihara & Bukka (1336); Vasco da Gama reached India (1498); First Battle of Panipat (1526) founded Mughal rule.',
+        polityLinkText: 'Marked transition to Mughal & European maritime presence.', polityLockerId: 'pv-1',
+        quizQ: 'In which year did Babur defeat Ibrahim Lodi in the First Battle of Panipat?',
+        quizOpts: ['1498', '1526', '1539', '1556'], quizAns: 1,
+      },
+    ],
+  },
+  {
+    id: 'hub-med-2',
+    era: 'Medieval',
+    yearLabel: '1527–1708',
+    polityLeaves: [
+      { id: 'pl-cab', title: 'Part V: Executive & Council', articleBadge: 'Art 74–75', lockerId: 'pv-5' },
+      { id: 'pl-sec', title: 'Preamble: Secularism', articleBadge: 'Din-i-Ilahi & Art 25', lockerId: 'pv-3' },
+    ],
+    historyLeaves: [
+      {
+        id: 'hl-akbar-sher', dateBadge: '1527–1582', title: 'Khanwa, Chausa (1539), Panipat II & Haldighati', subtitle: 'Sher Shah, Akbar (1556), Talikota (1565) & Din-i-Ilahi', stars: 3,
+        cause: 'Mughal–Afghan and Mughal–Rajput power struggles across North India and the Deccan.',
+        effect: 'Khanwa (1527), Chausa (1539), Humayun recapture (1555), Second Panipat (1556), Talikota (1565), Haldighati (1576), and Din-i-Ilahi (1582).',
+        polityLinkText: 'Secular state ethos (Preamble) and administrative reforms.', polityLockerId: 'pv-3',
+        quizQ: 'In which year did Akbar introduce Din-i-Ilahi?',
+        quizOpts: ['1556', '1576', '1582', '1600'], quizAns: 2,
+      },
+      {
+        id: 'hl-jahangir-shahjahan', dateBadge: '1600–1666', title: 'EIC (1600), Sir Thomas Roe (1615) & Shahjahan', subtitle: 'Jahangir (1605), Mumtaz Mahal (1631) & Aurangzeb (1659)', stars: 2,
+        cause: 'English East India Company charter (1600) and Mughal succession.',
+        effect: 'Sir Thomas Roe visited Jahangir (1615); Shahjahan reigned from 1628; Aurangzeb acceded in 1659.',
+        polityLinkText: 'Early English trading presence in India.', polityLockerId: 'pv-1',
+        quizQ: 'Sir Thomas Roe visited Emperor Jahangir’s court in which year?',
+        quizOpts: ['1600', '1605', '1615', '1634'], quizAns: 2,
+      },
+      {
+        id: 'hl-shivaji-aurangzeb', dateBadge: '1630–1708', title: 'Shivaji (1630–1680), Aurangzeb (1707) & Guru Gobind Singh', subtitle: 'Maratha rise & Sikh Gurus', stars: 3,
+        cause: 'Maratha resistance and Mughal expansion in the Deccan.',
+        effect: 'Shivaji born 1630, imprisoned 1665, died 1680; Aurangzeb died 1707; Guru Gobind Singh (10th Guru) passed away in 1708.',
+        polityLinkText: 'Executive leadership & council traditions (Part V).', polityLockerId: 'pv-5',
+        quizQ: 'In which year did Emperor Aurangzeb pass away?',
+        quizOpts: ['1680', '1699', '1707', '1739'], quizAns: 2,
+      },
+    ],
+  },
+  {
+    id: 'hub-modern-1',
+    era: 'Modern',
+    yearLabel: '1757–1919',
+    scarred: true,
+    polityLeaves: [
+      { id: 'pl-1784-1935', title: 'Constitutional Acts & Lists', articleBadge: '1784, 1919 & 1935', lockerId: 'pv-11' },
+      { id: 'pl-fr-1919', title: 'Part III: Fundamental Rights', articleBadge: 'Art 19, 21 & 22', lockerId: 'pv-3' },
+    ],
+    historyLeaves: [
+      {
+        id: 'hl-plassey-1857', dateBadge: '1757–1857', title: 'Plassey (1757), Buxar (1764), 1793 & 1857 Revolt', subtitle: 'Clive, Pitt’s India Act (1784), Permanent Settlement & 1857', stars: 3,
+        cause: 'EIC territorial expansion, Permanent Settlement (1793), and sepoy/popular grievances in 1857.',
+        effect: 'Plassey (1757), Buxar (1764), Pitt’s India Act (1784), Railways/Telegraph (1853), and Revolt of 1857.',
+        polityLinkText: 'Triggered transition from Company rule to Crown & constitutional acts.', polityLockerId: 'pv-11',
+        quizQ: 'Which land revenue system in Bengal was introduced in 1793?',
+        quizOpts: ['Ryotwari', 'Mahalwari', 'Permanent Settlement', 'Zabti'], quizAns: 2,
+      },
+      {
+        id: 'hl-1885-1911', dateBadge: '1885–1911', title: 'INC (1885), Bengal Partition (1905) & Delhi (1911)', subtitle: 'Hume & Bonnerjee, Muslim League (1906) & Capital Shift', stars: 3,
+        cause: 'All-India political mobilization and Lord Curzon’s 1905 Partition of Bengal.',
+        effect: 'INC founded 1885; Muslim League founded 1906; 1911 Delhi Durbar shifted capital from Calcutta to Delhi.',
+        polityLinkText: 'Shaped Art 3 (state boundaries) & representative institutions.', polityLockerId: 'pv-1',
+        quizQ: 'In which year was India’s capital shifted from Calcutta to Delhi?',
+        quizOpts: ['1905', '1906', '1911', '1919'], quizAns: 2,
+      },
+      {
+        id: 'hl-1919-jallianwala', dateBadge: '1916–1919', title: 'Lucknow Pact (1916), 1919 Act & Jallianwala Bagh', subtitle: 'Montagu-Chelmsford Reforms & Amritsar massacre', stars: 3, scarred: true,
+        cause: '1919 reforms and repressive measures against political protests.',
+        effect: 'Montagu-Chelmsford Reforms introduced in 1919 alongside the Jallianwala Bagh massacre at Amritsar.',
+        polityLinkText: 'Inspired civil liberties & Fundamental Rights under Part III.', polityLockerId: 'pv-3',
+        quizQ: 'Which reforms were introduced in 1919 alongside the Jallianwala Bagh massacre?',
+        quizOpts: ['Morley-Minto Reforms', 'Montagu-Chelmsford Reforms', 'Cabinet Mission Plan', 'Cripps Proposals'], quizAns: 1,
+      },
+    ],
+  },
+  {
+    id: 'hub-modern-2',
+    era: 'Modern',
+    yearLabel: '1929–2000',
+    polityLeaves: [
+      { id: 'pl-const-1950', title: '1950 Constitution & 73rd Amend', articleBadge: 'Art 326 & 243 (1993)', lockerId: 'pv-9' },
+      { id: 'pl-states-2000', title: '1st Schedule: State Reorg.', articleBadge: '1956 & Nov 2000 States', lockerId: 'pv-1' },
+    ],
+    historyLeaves: [
+      {
+        id: 'hl-1929-1947', dateBadge: '1929–1947', title: 'Poorna Swaraj (1929), Dandi (1930), 1935 Act & 1947', subtitle: 'Gandhi-Irwin Pact (1931), Quit India (1942), INA & Independence', stars: 3,
+        cause: 'Demand for complete independence and mass movements culminating in 1947.',
+        effect: 'Lahore Poorna Swaraj (1929), Dandi March (1930), GOI Act 1935, Quit India (1942), INA, and Independence/Partition in 1947.',
+        polityLinkText: 'GOI Act 1935 & Constituent Assembly shaped the 1950 Constitution.', polityLockerId: 'pv-11',
+        quizQ: 'In which session of INC was the resolution of Poorna Swaraj passed in 1929?',
+        quizOpts: ['Bombay Session', 'Calcutta Session', 'Lahore Session', 'Tripuri Session'], quizAns: 2,
+      },
+      {
+        id: 'hl-1949-1975', dateBadge: '1949–1975', title: 'Constitution (1949/50), 1971 War, Pokharan (1974) & 1975', subtitle: '26 Nov 1949, 26 Jan 1950, Aryabhata & Emergency', stars: 3,
+        cause: 'Constitutional adoption, state reorganization (1956), 1971 war, and 1975 Emergency.',
+        effect: 'Constitution adopted 26 Nov 1949 & enforced 26 Jan 1950; 1971 war; Pokharan nuclear test (1974); Aryabhata & Emergency (1975).',
+        polityLinkText: 'Republic framework, Art 352 Emergency & 42nd/44th Amendments.', polityLockerId: 'pv-amend',
+        quizQ: 'On which date was the Constitution of India adopted by the Constituent Assembly?',
+        quizOpts: ['15 August 1947', '26 November 1949', '26 January 1950', '24 April 1993'], quizAns: 1,
+      },
+      {
+        id: 'hl-1993-2000', dateBadge: '1993, 1998 & 2000', title: '73rd Amend (1993), Pokharan-II (1998) & 3 States (2000)', subtitle: 'Panchayati Raj Diwas, Operation Shakti & Nov 2000 states', stars: 3,
+        cause: 'Grassroots democracy enforcement and creation of new states in November 2000.',
+        effect: '73rd Amendment took effect April 24, 1993; Operation Shakti (1998); Chhattisgarh, Uttarakhand & Jharkhand formed in Nov 2000.',
+        polityLinkText: 'Part IX Panchayati Raj (11th Sch) & 1st Schedule state creation.', polityLockerId: 'pv-9',
+        quizQ: 'Which three states were created in November 2000?',
+        quizOpts: ['Goa, Sikkim, Mizoram', 'Chhattisgarh, Uttarakhand, Jharkhand', 'Telangana, Goa, Jharkhand', 'Uttarakhand, Sikkim, Bihar'], quizAns: 1,
       },
     ],
   },
@@ -261,93 +296,94 @@ interface VaultLocker {
 
 const VAULT_LOCKERS: VaultLocker[] = [
   {
-    id: 'pv-1', category: 'Core Parts', lockerCode: 'VAULT-01', partBadge: 'PREAMBLE · PART I & II',
-    title: 'Preamble, Union & Citizenship', articlesRange: 'Preamble & Articles 1–11', sealText: 'SOVEREIGN CORE', stars: 3,
-    borrowedFrom: 'Preamble: USA | Liberty/Equality/Fraternity: France | Single Citizenship: UK',
-    scheduleLink: '1st Schedule (28 States & 8 UTs) · Fazl Ali Commission (7th Amend 1956)',
-    historyEra: 'Modern', historyLeafId: 'hl-1857', historyLinkLabel: '1857 Revolt & 1946 Objectives Resolution',
+    id: 'pv-1', category: 'Core Parts', lockerCode: 'VAULT-01', partBadge: 'PART I & PART II',
+    title: 'The Union & Citizenship', articlesRange: 'Articles 1–11', sealText: 'SOVEREIGN CORE', stars: 3,
+    borrowedFrom: 'Part I (Art 1–4) & Part II (Art 5–11) of the Constitution',
+    scheduleLink: '1st Schedule (States & UTs, India–Bangladesh LBA via 100th Amend)',
+    historyEra: 'Modern', historyLeafId: 'hl-1885-1911', historyLinkLabel: '1911 Capital Shift & 1956 State Reorg.',
     articles: [
-      { code: 'Preamble (42nd Amend 1976)', summary: 'Sovereign Socialist Secular Democratic Republic. Amended once in 1976 to add Socialist, Secular, and Integrity.' },
-      { code: 'Articles 1, 2 & 3', summary: 'Art 1: India, that is Bharat, shall be a Union of States. Art 2: Admission of new states (Sikkim 36th Amend 1975). Art 3: Altering state boundaries/names by simple majority.' },
-      { code: 'Articles 5 to 11', summary: 'Single Citizenship at commencement (Art 5–8), loss on foreign citizenship (Art 9), and Parliament’s power to regulate citizenship (Art 11).' },
+      { code: 'Articles 1–4 (Part I)', summary: 'The Union and its territory; state reorganization & territory adjustments.' },
+      { code: 'Articles 5–11 (Part II)', summary: 'Citizenship provisions at commencement and parliamentary regulation of citizenship.' },
     ],
   },
   {
-    id: 'pv-3', category: 'Core Parts', lockerCode: 'VAULT-02', partBadge: 'PART III · MAGNA CARTA',
-    title: 'Fundamental Rights & 5 Writs', articlesRange: 'Articles 12 to 35', sealText: 'JUSTICIABLE SHIELD', stars: 3,
-    borrowedFrom: 'USA Bill of Rights (Art 20 & 21 never suspended in Emergency — 44th Amend 1978)',
-    scheduleLink: 'Citizens-Only Rights: Articles 15, 16, 19, 29 & 30',
-    historyEra: 'Modern', historyLeafId: 'hl-1919', historyLinkLabel: '1919 Rowlatt Act & Jallianwala Bagh',
+    id: 'pv-3', category: 'Core Parts', lockerCode: 'VAULT-02', partBadge: 'PART III · FUNDAMENTAL RIGHTS',
+    title: 'Fundamental Rights & 5 Writs', articlesRange: 'Articles 12–35', sealText: 'JUSTICIABLE SHIELD', stars: 3,
+    borrowedFrom: 'Part III of Indian Constitution (Art 12–35)',
+    scheduleLink: 'Art 32 (SC Writs) & Art 226 (HC Writs) · Art 300A Property shift (44th Amend)',
+    historyEra: 'Modern', historyLeafId: 'hl-1919-jallianwala', historyLinkLabel: '1919 Rowlatt & Civil Liberties',
     articles: [
-      { code: 'Art 14–18 (Right to Equality)', summary: '14: Equality before Law. 15: No discrimination. 16: Equal opportunity in public jobs. 17: Abolition of Untouchability. 18: Abolition of Titles.' },
-      { code: 'Art 19–22 (Right to Freedom)', summary: '19: 6 Freedoms. 20: Conviction protection. 21: Life & Personal Liberty. 21A: Free Education (6–14 yrs, 86th Amend 2002). 22: Arbitrary arrest protection.' },
-      { code: 'Art 32 (Heart & Soul — 5 Writs)', summary: 'SC issues 5 Writs (HC under Art 226): Habeas Corpus, Mandamus, Prohibition, Certiorari, and Quo-Warranto.' },
+      { code: 'Art 12, 13 & 14–18 (Equality)', summary: '12: State definition. 13: Invalidity of inconsistent laws. 14: Equality before law. 15: No discrimination. 16: Public jobs. 17: Abolition of untouchability. 18: Abolition of titles.' },
+      { code: 'Art 19–22 (Freedom & Education)', summary: '19: Six freedoms. 20: Conviction protection. 21: Life & personal liberty. 21A: Free/compulsory education (6–14 yrs, 86th Amend 2002). 22: Arrest & preventive detention safeguards.' },
+      { code: 'Art 23–34 & 5 Writs', summary: '23–24: Against exploitation/child labour (<14 yrs). 25–28: Religion. 29–30: Minorities. 32: Constitutional remedies (Habeas Corpus, Mandamus, Prohibition, Certiorari, Quo-Warranto). 33–34: Forces & martial law.' },
     ],
   },
   {
     id: 'pv-4', category: 'Core Parts', lockerCode: 'VAULT-03', partBadge: 'PART IV & PART IVA',
-    title: 'DPSP & 11 Fundamental Duties', articlesRange: 'Articles 36 to 51A', sealText: 'WELFARE DIRECTIVE', stars: 3,
-    borrowedFrom: 'DPSP: Ireland | Fundamental Duties: USSR (Swaran Singh Committee 1976)',
-    scheduleLink: 'Non-Justiciable (Art 37) · Part IVA added by 42nd Amend 1976',
-    historyEra: 'Ancient', historyLeafId: 'hl-mau', historyLinkLabel: 'Ashoka’s Kalinga Dhamma Edicts (261 BCE)',
+    title: 'DPSP & Fundamental Duties', articlesRange: 'Articles 36–51A', sealText: 'WELFARE DIRECTIVE', stars: 3,
+    borrowedFrom: 'Part IV (Art 36–51 DPSP) & Part IVA (Art 51A via 42nd Amend 1976)',
+    scheduleLink: 'Art 37: DPSPs not court-enforceable, fundamental in governance',
+    historyEra: 'Ancient', historyLeafId: 'hl-maurya', historyLinkLabel: 'Ashoka’s Dhamma & Welfare Ideals',
     articles: [
-      { code: 'Art 38, 39A, 40, 44, 48A & 50', summary: '38: Welfare State. 39A: Free Legal Aid. 40: Village Panchayats. 44: Uniform Civil Code. 48A: Environment & Wildlife. 50: Separation of Judiciary from Executive.' },
-      { code: 'Art 51A (11 Fundamental Duties)', summary: '10 Duties added by 42nd Amendment 1976; 11th Duty (education for 6–14 yr child) added by 86th Amendment 2002.' },
+      { code: 'Art 36–43B (Welfare, Panchayats & Co-ops)', summary: '36–37: State & non-enforceability. 38–39A: Social order & equal justice/free legal aid (42nd Amend). 40: Village panchayats. 41–43B: Work/maternity/living wage & co-operative societies.' },
+      { code: 'Art 44–51 & 51A (Duties)', summary: '44: Uniform civil code. 45–48A: Early care (<6 yrs), SC/ST/weaker sections, nutrition/health, environment/wildlife (42nd Amend). 49–51: Monuments, separation of judiciary & international peace. 51A: 11 Duties.' },
     ],
   },
   {
     id: 'pv-5', category: 'Core Parts', lockerCode: 'VAULT-04', partBadge: 'PART V & PART VI',
-    title: 'Union & State Executive, Parliament & SC', articlesRange: 'Articles 52 to 237', sealText: 'SUPREME COMMAND', stars: 3,
-    borrowedFrom: 'UK: Cabinet, Bicameralism, CAG | USA: Impeachment, Judicial Review | Australia: Art 108 Joint Sitting',
+    title: 'The Union, Parliament, SC & CAG', articlesRange: 'Articles 52–237', sealText: 'SUPREME COMMAND', stars: 3,
+    borrowedFrom: 'Part V (Art 52–151 The Union) & Part VI (Art 152–237 The States)',
     scheduleLink: '2nd Schedule (Salaries), 3rd Schedule (Oaths), 4th Schedule (Rajya Sabha Seats)',
-    historyEra: 'Modern', historyLeafId: 'hl-1773', historyLinkLabel: '1773 Regulating Act (SC) & 1885 INC',
+    historyEra: 'Modern', historyLeafId: 'hl-1949-1975', historyLinkLabel: 'Constitutional Framework & NJAC (99th Amend)',
     articles: [
-      { code: 'President & Governor (Art 52–72, 123, 213)', summary: '52: President (35 yrs). 61: Impeachment. 72: President Pardon (161: Governor). 123: President Ordinance (213: Governor).' },
-      { code: 'Parliament & Judiciary (Art 79–148, 226)', summary: '80: Rajya Sabha (30 yrs). 81: Lok Sabha (25 yrs). 108: Joint Sitting. 110: Money Bill. 112: Budget. 124: Supreme Court. 148: CAG. 226: HC Writs.' },
+      { code: 'President, VP, Council & AG (Art 52–76, 123)', summary: '52–53: President & executive power. 54–56 & 61: Election, 5-yr term & impeachment. 63–66: VP & RS Chairman. 72: Pardons. 74: Council of Ministers. 76: Attorney General. 123: Ordinances.' },
+      { code: 'Parliament (Art 79–122)', summary: '79–81: Parliament, Rajya Sabha, Lok Sabha. 83–85: Duration, qualifications, sessions. 89–95: RS Chair/Deputy & LS Speaker/Deputy. 100: Quorum/voting. 110: Money Bills. 112: Budget. 114: Appropriation.' },
+      { code: 'Supreme Court & CAG (Art 124–149)', summary: '124–129: SC & Court of Record. 131–138: Original, appellate & special leave jurisdictions. 141: Binding law. 143: SC consultation. 148–149: Comptroller & Auditor-General (CAG).' },
     ],
   },
   {
-    id: 'pv-9', category: 'Core Parts', lockerCode: 'VAULT-05', partBadge: 'PART IX & IXA',
-    title: 'Panchayati Raj & Municipalities', articlesRange: 'Articles 243 to 243ZG', sealText: 'GRASSROOTS TIER', stars: 3,
-    borrowedFrom: 'Balwant Rai Mehta (1957 — 3-tier, Nagaur RJ 1959), L.M. Singhvi (1986)',
-    scheduleLink: '11th Schedule (29 Subjects · 73rd Amend) & 12th Schedule (18 Subjects · 74th Amend)',
-    historyEra: 'Ancient', historyLeafId: 'hl-cho', historyLinkLabel: 'Chola Uttaramerur Ballot & IVC Cities',
+    id: 'pv-9', category: 'Core Parts', lockerCode: 'VAULT-05', partBadge: 'PART IX & PART IXA',
+    title: 'Panchayati Raj & Municipalities', articlesRange: 'Articles 243–243ZG', sealText: 'GRASSROOTS TIER', stars: 3,
+    borrowedFrom: '73rd Amendment Act 1992 (w.e.f. 24 April 1993) & 74th Amendment Act 1992 (w.e.f. 01.06.1993)',
+    scheduleLink: '11th Schedule (Panchayats · 29 subjects) & 12th Schedule (Municipalities · 18 subjects)',
+    historyEra: 'Modern', historyLeafId: 'hl-1993-2000', historyLinkLabel: '73rd Amendment & Panchayati Raj Diwas (Apr 24)',
     articles: [
-      { code: 'Art 243A–243K (73rd Amend 1992)', summary: '243A: Gram Sabha. 243B: 3-tier Panchayats. 243D: SC/ST + min 1/3rd Women reservation. 243F: Min age 21 yrs. 243I: State Finance Commission.' },
-      { code: 'Art 243P–243ZG (74th Amend 1992)', summary: '243Q: Nagar Panchayat, Municipal Council & Municipal Corporation. 243ZD: District Planning Committee.' },
+      { code: 'Part IX — Panchayati Raj (Art 243, 243A–243O)', summary: 'Constitutional status to rural local self-government; effective April 24, 1993 (Panchayati Raj Diwas) and linked to 29 subjects in the 11th Schedule.' },
+      { code: 'Part IXA — Municipalities (Art 243P–243ZG)', summary: 'Constitutional status to urban local bodies / municipalities (effective 01.06.1993) with 18 functional subjects in the 12th Schedule.' },
     ],
   },
   {
-    id: 'pv-11', category: 'Core Parts', lockerCode: 'VAULT-06', partBadge: 'PART XI, XIV, XV & XVIII',
-    title: 'Finance, UPSC, Elections & Emergency', articlesRange: 'Articles 245 to 368', sealText: 'FEDERAL MATRIX', stars: 3,
-    borrowedFrom: 'GOI Act 1935, Germany (Emergency), South Africa (Art 368), Canada (Strong Centre)',
-    scheduleLink: '7th Schedule (Union 100, State 61, Concurrent 52)',
-    historyEra: 'Modern', historyLeafId: 'hl-1935', historyLinkLabel: 'GOI Act 1935 Blueprint & 1932 Poona Pact',
+    id: 'pv-11', category: 'Core Parts', lockerCode: 'VAULT-06', partBadge: 'PART XII, XIV, XV, XVIII & XX',
+    title: 'Property, Services, Elections & Emergency', articlesRange: 'Art 300A–395', sealText: 'FEDERAL MATRIX', stars: 3,
+    borrowedFrom: 'Parts XII, XIV, XV, XVI, XVII, XVIII, XX & XXII of the Constitution',
+    scheduleLink: '7th Schedule (Union, State & Concurrent Lists)',
+    historyEra: 'Modern', historyLeafId: 'hl-1929-1947', historyLinkLabel: '1935 Act & Constitutional Governance',
     articles: [
-      { code: 'Finance & Services (Art 266–315)', summary: '266: Consolidated Fund. 267: Contingency Fund. 279A: GST Council. 280: Finance Commission. 300A: Property Right. 312: All-India Services. 315: UPSC.' },
-      { code: 'Elections & Emergencies (Art 324–368)', summary: '324: Election Commission. 326: Adult Suffrage (18 yrs). 352: National Emergency. 356: President’s Rule. 360: Financial Emergency. 368: Amendment.' },
+      { code: 'Art 300A, 309–315 & 324–329', summary: '300A: Right to property (44th Amend). 309–315: Union/State services & PSCs. 324–329: Election Commission, non-discrimination in roll & adult suffrage.' },
+      { code: 'Art 330–370 & 393–395', summary: '330–342: Special class provisions. 343–351: Official language. 352–360: Emergencies. 365 & 368: Union directions & Amendment procedure. 370: J&K provision (370(3) noted Aug 5, 2019).' },
     ],
   },
   {
-    id: 'pv-schedules', category: '12 Schedules', lockerCode: 'VAULT-07', partBadge: 'ALL 12 SCHEDULES',
-    title: 'Complete 12 Schedules ("TEARS OF OLD PM")', articlesRange: '1st to 12th Schedule', sealText: 'MASTER CODEX', stars: 3,
-    borrowedFrom: 'Originally 8 Schedules (1950); 9th (1951), 10th (1985), 11th & 12th (1992) added',
-    scheduleLink: 'Mnemonic: T-E-A-R-S O-F O-L-D P-M',
-    historyEra: 'Modern', historyLeafId: 'hl-1946', historyLinkLabel: '1946–49 Constituent Assembly',
+    id: 'pv-sched', category: '12 Schedules', lockerCode: 'VAULT-07', partBadge: '2ND TO 12TH SCHEDULE',
+    title: 'Key Constitutional Schedules (2nd–12th)', articlesRange: 'Schedules 2 to 12', sealText: 'MASTER CODEX', stars: 3,
+    borrowedFrom: 'Constitutional Schedules & Amendment Acts (21st, 52nd, 71st, 73rd, 74th, 78th, 92nd)',
+    scheduleLink: 'Covers Salaries, Oaths, RS Seats, Tribal Areas, Lists, Languages, Land & Anti-Defection',
+    historyEra: 'Modern', historyLeafId: 'hl-1993-2000', historyLinkLabel: 'Schedules & Local Body Amendments',
     articles: [
-      { code: '1st to 6th Schedule (T-E-A-R-S-O)', summary: '1st (T): 28 States & 8 UTs. 2nd (E): Salaries. 3rd (A): Oaths. 4th (R): Rajya Sabha Seats. 5th (S): Scheduled Areas. 6th (O): Tribal Areas in Assam, Meghalaya, Tripura, Mizoram (AMTM).' },
-      { code: '7th to 12th Schedule (F-O-L-D-P-M)', summary: '7th (F): 3 Lists (100/61/52). 8th (O): 22 Languages. 9th (L): Land Reforms (1st Amend 1951). 10th (D): Anti-Defection (52nd Amend 1985). 11th (P): Panchayats (29). 12th (M): Municipalities (18).' },
+      { code: '2nd, 3rd, 4th, 5th & 6th Schedules', summary: '2nd: Emoluments/allowances. 3rd: Oaths/affirmations. 4th: Rajya Sabha seats. 5th: Scheduled Areas/ST. 6th: Tribal areas in Assam, Meghalaya, Tripura & Mizoram.' },
+      { code: '7th, 8th, 9th, 10th, 11th & 12th Schedules', summary: '7th: Union, State & Concurrent Lists. 8th: 22 languages (Sindhi 21st, Konkani/Manipuri/Nepali 71st, Bodo/Dogri/Maithili/Santhali 92nd). 9th: Acts/regulations. 10th: Anti-defection (52nd). 11th: Panchayats (29). 12th: Municipalities (18).' },
     ],
   },
   {
-    id: 'pv-amendments', category: 'Top Amendments', lockerCode: 'VAULT-08', partBadge: 'ARTICLE 368 AMENDMENTS',
-    title: 'Top Landmark Amendments (1st–106th)', articlesRange: '1951 to 2023 Amendments', sealText: 'HIGH-YIELD EXAM', stars: 3,
-    borrowedFrom: 'South African Constitution (Art 368)',
-    scheduleLink: 'Covers 95% of SSC JE / RRB JE / WBPSC Amendment Questions',
-    historyEra: 'Modern', historyLeafId: 'hl-1946', historyLinkLabel: 'Constitutional Evolution (1951–2023)',
+    id: 'pv-amend', category: 'Top Amendments', lockerCode: 'VAULT-08', partBadge: 'ARTICLE 368 AMENDMENTS',
+    title: 'Landmark Constitutional Amendments', articlesRange: '1st to 106th Amendment', sealText: 'HIGH-YIELD EXAM', stars: 3,
+    borrowedFrom: 'Constitutional Amendment Acts (1951–2023)',
+    scheduleLink: '42nd ("Mini Constitution"), 44th, 61st, 73rd/74th, 86th, 101st, 103rd & 106th',
+    historyEra: 'Modern', historyLeafId: 'hl-1949-1975', historyLinkLabel: 'Post-Independence Constitutional Milestones',
     articles: [
-      { code: '1st, 42nd, 44th, 52nd, 61st & 86th Amendments', summary: '1st (1951): 9th Sch. 42nd (1976): Mini-Constitution. 44th (1978): Property to Art 300A. 52nd (1985): Anti-Defection. 61st (1989): Voting age 21→18. 86th (2002): Art 21A RTE.' },
-      { code: '101st, 102nd, 103rd, 104th & 106th Amendments', summary: '101st: GST. 102nd: NCBC (Art 338B). 103rd: 10% EWS. 104th: Ended Anglo-Indian seats. 106th (2023): 33% Women Reservation in Lok Sabha & State Assemblies.' },
+      { code: '1st (1951), 7th (1956), 42nd (1976) & 44th (1978)', summary: '1st: 9th Schedule & Art 15(4)/19(6). 7th: State reorganization. 42nd ("Mini Constitution"): Socialist, Secular, Integrity in Preamble & Part IVA Duties. 44th: Art 300A property & armed rebellion in Art 352.' },
+      { code: '52nd, 61st, 69th, 70th, 73rd/74th & 86th', summary: '52nd: 10th Sch anti-defection. 61st: Voting age 21→18 (Art 326). 69th/70th: Delhi NCT & Delhi/Puducherry MLAs in President election. 73rd/74th: Panchayats & Municipalities. 86th: Art 21A education (6–14 yrs).' },
+      { code: '91st, 101st (GST), 102nd, 103rd (EWS), 104th & 106th', summary: '91st: 15% minister cap. 101st: GST & Art 279A. 102nd: NCBC (Art 338B). 103rd: EWS quota. 104th: Extended SC/ST quota & ended Anglo-Indian nomination. 106th (2023): 33% women’s reservation bill.' },
     ],
   },
 ]
@@ -383,42 +419,38 @@ interface GeoStaticPin {
 }
 
 const GEO_STATIC_PINS: GeoStaticPin[] = [
-  { id: 'bs-keoladeo', category: 'Bird Sanctuaries & Ramsar', shortLabel: 'Keoladeo / Bharatpur Bird', title: 'Keoladeo Ghana (Bharatpur) Bird Sanctuary', state: 'Rajasthan', lat: 27.16, lng: 77.52, stars: 3, primaryFact: 'UNESCO World Heritage site (1985) and one of India’s 1st Ramsar Sites (1981); winter habitat of Siberian Crane.', tributaryOrRange: 'Confluence of Gambhir & Banganga rivers.', examHighlight: 'Keoladeo (Rajasthan) and Loktak Lake (Manipur) are the ONLY 2 Indian wetlands on the Montreux Record.', landscapeType: 'bird', elevationOrCapacity: '1st Ramsar (1981)', riverSystemId: 'riv-ganga' },
-  { id: 'bs-chilika', category: 'Bird Sanctuaries & Ramsar', shortLabel: 'Chilika & Nalabana Bird', title: 'Chilika Lagoon & Nalabana Bird Sanctuary', state: 'Odisha', lat: 19.69, lng: 85.32, stars: 3, primaryFact: 'India’s largest brackish water coastal lagoon & 1st Ramsar Site (1981); Nalabana Island at its core is a major bird sanctuary.', tributaryOrRange: 'Fed by Daya & Bhargavi rivers; home of endangered Irrawaddy Dolphins.', examHighlight: 'Removed from Montreux Record in 2002 after successful ecological restoration.', landscapeType: 'bird', elevationOrCapacity: 'Largest Lagoon', riverSystemId: 'riv-peninsular' },
-  { id: 'bs-pulicat', category: 'Bird Sanctuaries & Ramsar', shortLabel: 'Pulicat & Sriharikota', title: 'Pulicat Lake & Nelapattu Bird Sanctuary', state: 'Andhra Pradesh / TN', lat: 13.58, lng: 80.18, stars: 3, primaryFact: 'India’s 2nd largest brackish water lagoon; Sriharikota Island (ISRO Launchport) separates it from Bay of Bengal.', tributaryOrRange: 'Nelapattu Pelicanry & Flamingo Festival.', examHighlight: 'Which barrier island separates Pulicat Lake from the Bay of Bengal? Answer: Sriharikota.', landscapeType: 'bird', elevationOrCapacity: '2nd Largest Lagoon', riverSystemId: 'riv-peninsular' },
-  { id: 'bs-kulik', category: 'Bird Sanctuaries & Ramsar', shortLabel: 'Kulik (Raiganj) Bird', title: 'Raiganj (Kulik) Bird Sanctuary & East Kolkata Wetlands', state: 'West Bengal (Uttar Dinajpur)', lat: 25.62, lng: 88.12, stars: 3, primaryFact: 'Along the Kulik River in Raiganj — Asia’s 2nd largest rookery for Asian Openbill Storks.', tributaryOrRange: 'East Kolkata Wetlands (Ramsar 2002) & Santragachi Jheel (Howrah).', examHighlight: 'WBSEDCL/WBPSC: Kulik Bird Sanctuary is in Uttar Dinajpur (Raiganj).', landscapeType: 'bird', elevationOrCapacity: 'Openbill Rookery', riverSystemId: 'riv-ganga' },
-  { id: 'bs-wular', category: 'Bird Sanctuaries & Ramsar', shortLabel: 'Wular Lake & Harike', title: 'Wular Lake (J&K) & Harike Wetland (Punjab)', state: 'J&K & Punjab', lat: 34.33, lng: 74.56, stars: 3, primaryFact: 'Wular Lake (Bandipora J&K on Jhelum) is India’s LARGEST freshwater lake; Harike sits at Beas–Sutlej confluence.', tributaryOrRange: 'Renuka Wetland (HP) is India’s SMALLEST Ramsar site.', examHighlight: 'Largest Freshwater Lake = Wular (J&K) | Smallest Ramsar Site = Renuka Wetland (HP).', landscapeType: 'bird', elevationOrCapacity: 'Largest Freshwater', riverSystemId: 'riv-indus' },
+  { id: 'bs-keoladeo', category: 'Bird Sanctuaries & Ramsar', shortLabel: 'Ghana / Keoladeo & Sambhar', title: 'Ghana Bird Sanctuary (Bharatpur) & Sambhar Lake', state: 'Rajasthan', lat: 27.16, lng: 77.52, stars: 3, primaryFact: 'Ghana Bird Sanctuary (Bharatpur) is known for Siberian Crane, Spoonbill, Heron teal & Stork; Keoladeo Ghana NP & Sambhar Lake are Ramsar sites.', tributaryOrRange: 'Rajasthan wetlands in GS dataset: Keoladeo Ghana NP & Sambhar Lake.', examHighlight: 'Keoladeo Ghana NP declared Ramsar site on 01.10.1981; Sambhar Lake on 23.03.1990.', landscapeType: 'bird', elevationOrCapacity: 'Ramsar · Bharatpur', riverSystemId: 'riv-ganga' },
+  { id: 'bs-chilika', category: 'Bird Sanctuaries & Ramsar', shortLabel: 'Chilika & Bhitarakanika', title: 'Chilika Lake, Bhitarakanika Mangroves, Ansupa, Hirakud & Tampara', state: 'Odisha', lat: 19.69, lng: 85.32, stars: 3, primaryFact: 'Chilika Lake (declared Ramsar 01.10.1981) leads Odisha’s Ramsar wetlands alongside Bhitarakanika Mangroves, Ansupa, Hirakud Reservoir & Tampara Lake.', tributaryOrRange: 'Mahanadi & coastal delta wetlands of Odisha.', examHighlight: 'Chilika Lake Ramsar date: 01.10.1981; Hirakud Reservoir: 12.10.2021.', landscapeType: 'bird', elevationOrCapacity: 'Ramsar · Odisha', riverSystemId: 'riv-peninsular' },
+  { id: 'bs-loktak', category: 'Bird Sanctuaries & Ramsar', shortLabel: 'Loktak Lake & Rudrasagar', title: 'Loktak Lake (Manipur) & Rudrasagar Lake (Tripura)', state: 'Manipur & Tripura', lat: 24.55, lng: 93.8, stars: 3, primaryFact: 'Loktak Lake (Manipur, Ramsar 23.03.1990) and Rudrasagar Lake (Tripura, Ramsar 08.11.2005) are key North-East Ramsar wetland sites.', tributaryOrRange: 'North-East wetland sites listed in GS Ramsar dataset.', examHighlight: 'Loktak Lake declared Ramsar site on 23.03.1990.', landscapeType: 'bird', elevationOrCapacity: 'Ramsar · NE India', riverSystemId: 'riv-brahmaputra' },
+  { id: 'bs-vembanad', category: 'Bird Sanctuaries & Ramsar', shortLabel: 'Vembanad Kol, Ashtamudi & Sasthamkotta', title: 'Vembanad Kol Wetland, Ashtamudi & Sasthamkotta Lake', state: 'Kerala', lat: 9.6, lng: 76.4, stars: 3, primaryFact: 'Vembanad Kol Wetland, Ashtamudi Wetland, and Sasthamkotta Lake are Kerala’s Ramsar wetland sites (declared 19.08.2002).', tributaryOrRange: 'Kerala backwater & freshwater Ramsar sites.', examHighlight: 'All three Kerala Ramsar sites were declared on 19.08.2002.', landscapeType: 'bird', elevationOrCapacity: 'Ramsar · Kerala', riverSystemId: 'riv-peninsular' },
+  { id: 'bs-harike', category: 'Bird Sanctuaries & Ramsar', shortLabel: 'Harike, Kanjli, Ropar & Beas', title: 'Harike Lake, Kanjli, Ropar, Beas, Keshopur-Miani & Nangal', state: 'Punjab', lat: 31.15, lng: 74.95, stars: 3, primaryFact: 'Punjab hosts Ramsar wetlands including Harike Lake (23.03.1990), Kanjli & Ropar (22.01.2002), and Beas, Keshopur-Miani & Nangal (26.09.2019).', tributaryOrRange: 'Beas & Sutlej wetland conservation network.', examHighlight: 'Harike Lake Ramsar declaration: 23.03.1990.', landscapeType: 'bird', elevationOrCapacity: 'Ramsar · Punjab', riverSystemId: 'riv-indus' },
+  { id: 'bs-tn-ramsar', category: 'Bird Sanctuaries & Ramsar', shortLabel: 'Vedanthangal, Pt Calimere & Gulf of Mannar', title: 'Vedanthangal, Point Calimere, Pichavaram & Gulf of Mannar Ramsar Sites', state: 'Tamil Nadu', lat: 11.45, lng: 79.75, stars: 3, primaryFact: 'Tamil Nadu features multiple Ramsar bird & coastal sites including Point Calimere (19.08.2002), Vedanthangal, Pichavaram & Gulf of Mannar.', tributaryOrRange: 'Includes Karaivetti, Koonthankulam, Pallikaranai, Vaduvur, Vellode, Vembannur & Suchindram Theroor.', examHighlight: 'Point Calimere Ramsar site declared on 19.08.2002.', landscapeType: 'bird', elevationOrCapacity: 'Ramsar · Tamil Nadu', riverSystemId: 'riv-peninsular' },
 
-  { id: 'np-hemis', category: 'National Parks & Tigers', shortLabel: 'Hemis (Largest) & Dachigam', title: 'Hemis National Park (Ladakh) & Dachigam (J&K)', state: 'Ladakh & J&K', lat: 33.98, lng: 77.42, stars: 3, primaryFact: 'Hemis NP (4,400 sq km) is India’s LARGEST National Park (Snow Leopards). Dachigam protects Hangul (Kashmir Stag).', tributaryOrRange: 'South Button Island (Andaman) is India’s SMALLEST NP (0.03 sq km).', examHighlight: 'Largest NP = Hemis | Smallest NP = South Button | Oldest NP = Jim Corbett (1936).', landscapeType: 'park', elevationOrCapacity: '4,400 km² · Largest', riverSystemId: 'riv-indus' },
-  { id: 'np-corbett', category: 'National Parks & Tigers', shortLabel: 'Jim Corbett (1936, 1st NP)', title: 'Jim Corbett & Valley of Flowers National Parks', state: 'Uttarakhand', lat: 29.53, lng: 78.77, stars: 3, primaryFact: 'Jim Corbett (1936 as Hailey NP) is India’s FIRST National Park and launchpad of Project Tiger (1 April 1973).', tributaryOrRange: 'Ramganga River flows through Corbett.', examHighlight: 'Corbett holds the highest tiger density among all Indian Tiger Reserves.', landscapeType: 'park', elevationOrCapacity: 'Est. 1936 · Oldest NP', riverSystemId: 'riv-ganga' },
-  { id: 'np-gir', category: 'National Parks & Tigers', shortLabel: 'Gir NP (Asiatic Lion)', title: 'Gir National Park & Gulf of Kachchh Marine NP', state: 'Gujarat', lat: 21.12, lng: 70.82, stars: 3, primaryFact: 'Gir Forest (Junagadh) is the ONLY natural habitat of the Asiatic Lion in the world.', tributaryOrRange: 'Gulf of Kachchh is India’s 1st Marine NP and LARGEST Biosphere Reserve by area.', examHighlight: 'Only home of Asiatic Lion = Gir National Park, Gujarat.', landscapeType: 'park', elevationOrCapacity: 'Only Asiatic Lion' },
-  { id: 'np-kanha', category: 'National Parks & Tigers', shortLabel: 'Kanha, Kuno & Panna (11 NPs)', title: 'Madhya Pradesh "Tiger State" (11 National Parks)', state: 'Madhya Pradesh', lat: 22.33, lng: 80.61, stars: 3, primaryFact: 'Madhya Pradesh has the HIGHEST number of National Parks (11) and highest Tiger count (785) in India.', tributaryOrRange: 'Kanha, Bandhavgarh, Panna (Ken River), Pench, Satpura & Kuno (Project Cheetah).', examHighlight: 'Ken-Betwa River Interlinking passes through Panna Tiger Reserve.', landscapeType: 'park', elevationOrCapacity: '11 NPs · 785 Tigers', riverSystemId: 'riv-narmada-tapi' },
-  { id: 'np-kaziranga', category: 'National Parks & Tigers', shortLabel: 'Kaziranga & Manas (7 NPs)', title: 'Kaziranga, Manas, Raimona & Dehing Patkai', state: 'Assam', lat: 26.57, lng: 93.17, stars: 3, primaryFact: 'Kaziranga holds 2/3rds of the world’s One-Horned Rhinoceros (UNESCO 1985).', tributaryOrRange: 'Assam has 7 NPs; Majuli nearby is the world’s largest river island.', examHighlight: 'Orang NP is called "Mini Kaziranga".', landscapeType: 'park', elevationOrCapacity: '7 NPs · 1-Horn Rhino', riverSystemId: 'riv-brahmaputra' },
-  { id: 'np-keibul', category: 'National Parks & Tigers', shortLabel: 'Keibul Lamjao (Floating NP)', title: 'Keibul Lamjao National Park (Loktak Lake)', state: 'Manipur', lat: 24.5, lng: 93.82, stars: 3, primaryFact: 'World’s ONLY Floating National Park (Phumdis biomass & endangered Sangai Dancing Deer).', tributaryOrRange: 'Located on Loktak Lake (largest freshwater lake in North-East India).', examHighlight: 'World’s only Floating National Park: Keibul Lamjao (Manipur).', landscapeType: 'park', elevationOrCapacity: 'Only Floating NP', riverSystemId: 'riv-brahmaputra' },
-  { id: 'np-nilgiri', category: 'National Parks & Tigers', shortLabel: 'Nilgiri (1st Biosphere) & Silent Valley', title: 'Bandipur, Mudumalai, Silent Valley & Nilgiri Biosphere', state: 'Karnataka, TN & Kerala', lat: 11.66, lng: 76.62, stars: 3, primaryFact: 'Nilgiri Biosphere Reserve (1986 across TN, KL, KA) is India’s FIRST Biosphere Reserve.', tributaryOrRange: 'Silent Valley (Kerala) protects Lion-Tailed Macaque; Eravikulam protects Nilgiri Tahr.', examHighlight: 'India’s 1st Biosphere Reserve = Nilgiri (1986).', landscapeType: 'park', elevationOrCapacity: '1st Biosphere (1986)', riverSystemId: 'riv-peninsular' },
+  { id: 'np-corbett', category: 'National Parks & Tigers', shortLabel: 'Corbett NP & TR (Est. 1936)', title: 'Jim Corbett National Park & Tiger Reserve', state: 'Uttarakhand (Nainital)', lat: 29.53, lng: 78.77, stars: 3, primaryFact: 'Located in Nainital, Uttarakhand; established in 1936 (earlier known as Hailey NP) as the 1st National Park of India.', tributaryOrRange: 'Species noted: Elephant, Tiger, Sloth bear, Nilgai, Panther, Sambhar.', examHighlight: '1st National Park of India (est. 1936); also listed under Tiger Reserves.', landscapeType: 'park', elevationOrCapacity: 'Est. 1936 · 1st NP', riverSystemId: 'riv-ganga' },
+  { id: 'np-kaziranga', category: 'National Parks & Tigers', shortLabel: 'Kaziranga, Manas & Orang TR', title: 'Kaziranga NP, Manas NP, Nameri TR & Orang Tiger Reserve', state: 'Assam', lat: 26.57, lng: 93.17, stars: 3, primaryFact: 'Kaziranga & Manas are renowned for Great Indian one-horned Rhinoceros, Tiger, Elephant, Wild buffalo & Sambhar.', tributaryOrRange: 'Orang Tiger Reserve is noted as the 49th Tiger Reserve in India.', examHighlight: 'Orang TR noted as 49th TR in India (as on 16 May 2025 dataset).', landscapeType: 'park', elevationOrCapacity: '49th TR: Orang · Assam', riverSystemId: 'riv-brahmaputra' },
+  { id: 'np-gir', category: 'National Parks & Tigers', shortLabel: 'Gir NP & Wild Ass Sanctuary', title: 'Gir National Park (Junagadh) & Wild Ass Sanctuary (Kutch)', state: 'Gujarat', lat: 21.12, lng: 70.82, stars: 3, primaryFact: 'Gir NP (Junagadh) is known for Asiatic Lion, Panther, Sambhar, Nilgai & Crocodile; Wild Ass Sanctuary is in Little Rann of Kutch.', tributaryOrRange: 'Gujarat wildlife sites: Gir NP, Wild Ass Sanctuary, Nalsarovar, Thol, Khijadiya & Wadhvana.', examHighlight: 'Gir NP in Junagadh is famous for the Asiatic Lion.', landscapeType: 'park', elevationOrCapacity: 'Asiatic Lion · Gir' },
+  { id: 'np-kanha', category: 'National Parks & Tigers', shortLabel: 'Kanha, Pench, Bandhavgarh & Madhav TR', title: 'Kanha NP, Pench NP, Bandhavgarh, Panna, Satpura & Madhav TR', state: 'Madhya Pradesh', lat: 22.33, lng: 80.61, stars: 3, primaryFact: 'Kanha NP (Mandla & Balaghat) & Pench NP (Seoni) are major MP parks/tiger reserves with Tiger, Panther, Barasingha & Gaur.', tributaryOrRange: 'Includes Bandhavgarh, Panna, Satpura, Sanjay Dubri, Veerangana Durgavati & Madhav TR.', examHighlight: 'Madhav (MP) noted as 58th Tiger Reserve in India (as on 16 May 2025).', landscapeType: 'park', elevationOrCapacity: '58th TR: Madhav (MP)', riverSystemId: 'riv-narmada-tapi' },
+  { id: 'np-bandipur', category: 'National Parks & Tigers', shortLabel: 'Bandipur, Nagarahole & Bhadra TR', title: 'Bandipur NP, Nagarahole TR, Bhadra, Dandeli-Anshi & BRT TR', state: 'Karnataka', lat: 11.66, lng: 76.62, stars: 3, primaryFact: 'Bandipur NP (Chamarajanagar) protects Elephant, Tiger, Bear, Sambhar & Panther alongside Nagarahole, Bhadra, Dandeli-Anshi & BRT Tiger Reserves.', tributaryOrRange: 'Karnataka also hosts Ranganathittu Bird Sanctuary & Ramsar sites (Ankasamudra, Aghanashini, Magadi Kere).', examHighlight: 'Bandipur NP is located in Chamarajanagar district, Karnataka.', landscapeType: 'park', elevationOrCapacity: 'Bandipur · Karnataka', riverSystemId: 'riv-peninsular' },
+  { id: 'np-periyar', category: 'National Parks & Tigers', shortLabel: 'Periyar, Silent Valley & Parambikulam', title: 'Periyar NP (Idukki), Silent Valley NP & Parambikulam TR', state: 'Kerala', lat: 9.46, lng: 77.24, stars: 3, primaryFact: 'Periyar NP (Idukki) is known for Elephant, Tiger, Panther, Wild boar, Gaur & Sambhar; Silent Valley NP & Parambikulam TR are key Kerala reserves.', tributaryOrRange: 'Periyar & Parambikulam are listed as Tiger Reserves in Kerala.', examHighlight: 'Periyar NP is located in Idukki, Kerala.', landscapeType: 'park', elevationOrCapacity: 'Periyar · Idukki', riverSystemId: 'riv-peninsular' },
+  { id: 'np-namdapha', category: 'National Parks & Tigers', shortLabel: 'Namdapha NP, Kamlang (50th TR) & Pakke', title: 'Namdapha NP (Changlang), Kamlang TR (50th) & Pakke TR', state: 'Arunachal Pradesh', lat: 27.49, lng: 96.39, stars: 3, primaryFact: 'Namdapha NP (Changlang district) is noted for Tiger, Elephant, Panther & Leopard alongside Kamlang TR and Pakke TR.', tributaryOrRange: 'Arunachal Tiger Reserves: Namdapha, Kamlang & Pakke.', examHighlight: 'Kamlang TR noted as 50th Tiger Reserve in India (as on 16 May 2025).', landscapeType: 'park', elevationOrCapacity: '50th TR: Kamlang', riverSystemId: 'riv-brahmaputra' },
+  { id: 'np-dachigam', category: 'National Parks & Tigers', shortLabel: 'Dachigam NP (Hangul) & MG Marine NP', title: 'Dachigam NP (J&K) & Mahatma Gandhi Marine NP (Andaman)', state: 'J&K & Andaman-Nicobar', lat: 34.14, lng: 75.02, stars: 3, primaryFact: 'Dachigam NP (J&K) is known for Kashmir Stag (Hangul); Mahatma Gandhi Marine NP at Wandoor (Port Blair) protects coral reefs, turtles & marine life.', tributaryOrRange: 'J&K wetlands also include Hokera, Hygan & Shalbugh.', examHighlight: 'Dachigam NP is famous for Kashmir Stag (Hangul).', landscapeType: 'park', elevationOrCapacity: 'Hangul · Dachigam', riverSystemId: 'riv-indus' },
 
-  { id: 'dam-tehri', category: 'Rivers & Hydro Dams', shortLabel: 'Tehri Dam (260.5m Highest)', title: 'Tehri Hydro Dam & Panch Prayag Confluences', state: 'Uttarakhand', lat: 30.37, lng: 78.48, stars: 3, primaryFact: 'Tehri Dam (260.5 m, 2,400 MW) at Bhagirathi–Bhilangna confluence is the HIGHEST dam in India.', tributaryOrRange: 'Devprayag: Alaknanda + Bhagirathi = Ganga.', examHighlight: 'THDC Tehri = 1,000 MW Stage-I + 1,000 MW Pumped Storage + 400 MW Koteshwar.', landscapeType: 'dam', elevationOrCapacity: '260.5 m (Highest)', riverSystemId: 'riv-ganga' },
-  { id: 'dam-bhakra', category: 'Rivers & Hydro Dams', shortLabel: 'Bhakra Nangal & Chenab Dams', title: 'Bhakra Nangal (Sutlej) & Salal/Baglihar/Dulhasti (Chenab)', state: 'HP, Punjab & J&K', lat: 31.41, lng: 76.43, stars: 3, primaryFact: 'Bhakra Nangal (226 m highest straight gravity concrete dam, Gobind Sagar reservoir) sits on Sutlej.', tributaryOrRange: 'Chenab Projects: Salal, Baglihar, Dulhasti & 359 m Chenab Arch Rail Bridge.', examHighlight: 'Chenab Rail Bridge (Reasi, J&K) is the world’s highest railway bridge.', landscapeType: 'dam', elevationOrCapacity: 'Bhakra: 226 m', riverSystemId: 'riv-indus' },
-  { id: 'dam-sardar', category: 'Rivers & Hydro Dams', shortLabel: 'Sardar Sarovar (1450 MW)', title: 'Sardar Sarovar (Narmada) & Ukai Dam (Tapi)', state: 'Gujarat & MP', lat: 21.83, lng: 73.75, stars: 3, primaryFact: 'Sardar Sarovar Dam (Navagam, GJ — 1,450 MW) sits on the West-flowing Narmada River.', tributaryOrRange: 'Mahi River cuts the Tropic of Cancer TWICE.', examHighlight: 'Statue of Unity (182 m) stands downstream of Sardar Sarovar Dam.', landscapeType: 'dam', elevationOrCapacity: '1,450 MW · Narmada', riverSystemId: 'riv-narmada-tapi' },
-  { id: 'dam-hirakud', category: 'Rivers & Hydro Dams', shortLabel: 'Hirakud Dam (25.8 km Longest)', title: 'Hirakud Dam — Longest Dam in India', state: 'Odisha', lat: 21.52, lng: 83.87, stars: 3, primaryFact: 'Longest dam in India (4.8 km main, 25.8 km total with dykes) across the Mahanadi River near Sambalpur.', tributaryOrRange: 'Mahanadi rises in Sihawa hills (Chhattisgarh).', examHighlight: 'Hirakud = Longest Dam | Tehri = Highest Dam | Kallanai = Oldest Functional Dam.', landscapeType: 'dam', elevationOrCapacity: '25.8 km (Longest)', riverSystemId: 'riv-peninsular' },
-  { id: 'dam-nagarjuna', category: 'Rivers & Hydro Dams', shortLabel: 'Nagarjuna Sagar & Srisailam', title: 'Nagarjuna Sagar & Srisailam Hydro (Krishna River)', state: 'Telangana & AP', lat: 16.57, lng: 79.31, stars: 3, primaryFact: 'Nagarjuna Sagar (124 m tallest masonry dam) and Srisailam (1,670 MW hydro) span the Krishna River.', tributaryOrRange: 'Kaleshwaram & Polavaram projects lie on the Godavari River.', examHighlight: 'Nagarjuna Sagar Srisailam is India’s largest Tiger Reserve by area.', landscapeType: 'dam', elevationOrCapacity: 'Srisailam: 1,670 MW', riverSystemId: 'riv-peninsular' },
-  { id: 'dam-idukki', category: 'Rivers & Hydro Dams', shortLabel: 'Idukki Arch Dam & Mettur', title: 'Idukki Arch Dam (Periyar) & Mettur / Kallanai (Cauvery)', state: 'Kerala & Tamil Nadu', lat: 9.84, lng: 76.97, stars: 3, primaryFact: 'Idukki Dam (168.9 m across Periyar River, 780 MW) is Asia’s highest double-curvature parabolic ARCH dam.', tributaryOrRange: 'Cauvery: KRS, Shivanasamudra (1902), Mettur Dam & Kallanai (Grand Anicut).', examHighlight: '1st Hydro in India: Sidrapong (Darjeeling, 1897), followed by Shivanasamudra (1902).', landscapeType: 'dam', elevationOrCapacity: 'Idukki: Arch Dam', riverSystemId: 'riv-peninsular' },
+  { id: 'dam-bhakra', category: 'Rivers & Hydro Dams', shortLabel: 'Bhakra-Nangal & IGNP (Sutlej/Beas)', title: 'Bhakra-Nangal Multipurpose Project & Indira Gandhi Nahar Project', state: 'HP, Punjab, Haryana & Rajasthan', lat: 31.41, lng: 76.43, stars: 3, primaryFact: 'Bhakra-Nangal Project is on the Sutlej River at Bilaspur (HP) for irrigation & hydro-electricity; IGNP draws from Ravi-Beas & Sutlej (Harike).', tributaryOrRange: 'Shared across HP, Punjab, Haryana & Rajasthan.', examHighlight: 'Bhakra-Nangal is located on River Sutlej at Bilaspur (HP).', landscapeType: 'dam', elevationOrCapacity: 'Sutlej · Bilaspur (HP)', riverSystemId: 'riv-indus' },
+  { id: 'dam-sardar', category: 'Rivers & Hydro Dams', shortLabel: 'Sardar Sarovar, Ukai & Mahi Bajaj', title: 'Sardar Sarovar (Narmada), Ukai/Kakrapada (Tapi) & Mahi Bajaj Sagar', state: 'Gujarat & Rajasthan', lat: 21.83, lng: 73.75, stars: 3, primaryFact: 'Sardar Sarovar Project is on the Narmada River (Gujarat); Ukai & Kakrapada projects are on the Tapi River; Mahi Bajaj Sagar is on the Mahi River.', tributaryOrRange: 'Includes Dhuvaran Thermal Power Station (Kheda district, Gujarat).', examHighlight: 'Sardar Sarovar = Narmada | Ukai & Kakrapada = Tapi | Mahi Bajaj = Mahi.', landscapeType: 'dam', elevationOrCapacity: 'Narmada & Tapi Basin', riverSystemId: 'riv-narmada-tapi' },
+  { id: 'dam-hirakud', category: 'Rivers & Hydro Dams', shortLabel: 'Hirakud Project & Mahanadi Delta', title: 'Hirakud Multipurpose Project & Mahanadi Delta Project (Talcher)', state: 'Odisha', lat: 21.52, lng: 83.87, stars: 3, primaryFact: 'Hirakud Multipurpose Project is built on the Mahanadi River in Odisha; Mahanadi Delta Project is associated near Talcher.', tributaryOrRange: 'Hirakud Reservoir is also a designated Ramsar Wetland Site (12.10.2021).', examHighlight: 'Hirakud Multipurpose Project is on River Mahanadi in Odisha.', landscapeType: 'dam', elevationOrCapacity: 'Mahanadi · Odisha', riverSystemId: 'riv-peninsular' },
+  { id: 'dam-nagarjuna', category: 'Rivers & Hydro Dams', shortLabel: 'Nagarjuna Sagar, Pochampad & Sileru', title: 'Nagarjuna Sagar (Krishna), Pochampad (Godavari) & Lower Sileru', state: 'Telangana & Andhra Pradesh', lat: 16.57, lng: 79.31, stars: 3, primaryFact: 'Nagarjuna Sagar & Bheema Lift Irrigation are on River Krishna; Pochampad is on River Godavari; Lower Sileru is on River Sileru (Godavari basin).', tributaryOrRange: 'Tungabhadra & Upper Krishna projects span Karnataka & AP/Telangana.', examHighlight: 'Nagarjuna Sagar = Krishna | Pochampad = Godavari.', landscapeType: 'dam', elevationOrCapacity: 'Krishna & Godavari', riverSystemId: 'riv-peninsular' },
+  { id: 'dam-idukki', category: 'Rivers & Hydro Dams', shortLabel: 'Idukki (Periyar), Sabargiri & Koyna', title: 'Idukki (Cheruthoni/Periyar), Sabargiri (Kerala) & Koyna (Maharashtra)', state: 'Kerala & Maharashtra', lat: 9.84, lng: 76.97, stars: 3, primaryFact: 'Idukki Project is on River Periyar (Cheruthoni Dam) and Sabargiri is on Pamba-Kakki in Kerala; Koyna Project is on River Koyna in Maharashtra.', tributaryOrRange: 'Includes Koradi Thermal Station (Nagpur) and Kundah / Neyveli in Tamil Nadu.', examHighlight: 'Idukki Project uses Cheruthoni Dam on River Periyar.', landscapeType: 'dam', elevationOrCapacity: 'Periyar & Koyna', riverSystemId: 'riv-peninsular' },
+  { id: 'dam-rihand-kosi', category: 'Rivers & Hydro Dams', shortLabel: 'Rihand, Mata-Tila, Ban Sagar, Kosi & Gandak', title: 'Rihand (UP), Mata-Tila (Betwa), Ban Sagar (Sone), Kosi & Gandak', state: 'UP, Bihar & MP', lat: 24.2, lng: 83.0, stars: 3, primaryFact: 'Rihand Scheme (UP), Mata-Tila (Betwa), Ban Sagar (Sone), Kosi Project (Bihar), and Gandak Project (UP & Bihar) are key river valley projects.', tributaryOrRange: 'Includes Chambal Project (MP & Rajasthan), Obra (UP) & Ramganga (Uttarakhand).', examHighlight: 'Kosi = Flood control & irrigation in Bihar | Ban Sagar = River Sone.', landscapeType: 'dam', elevationOrCapacity: 'Ganga & Son Basin', riverSystemId: 'riv-ganga' },
 
-  { id: 'mt-k2', category: 'Mountains & Passes', shortLabel: 'K2 (8611m) & Zoji La Pass', title: 'Karakoram (K2, Siachen), Zoji La & Banihal Passes', state: 'Ladakh & J&K', lat: 35.88, lng: 76.51, stars: 3, primaryFact: 'K2 / Godwin-Austen (8,611 m) is the 2nd highest peak in the world; Siachen (76 km) is the highest battleground.', tributaryOrRange: 'Zoji La (Srinagar–Leh), Banihal (Jawahar Tunnel), Khardung La.', examHighlight: 'Order N→S: Karakoram → Ladakh → Zanskar → Pir Panjal → Dhauladhar → Shiwalik.', landscapeType: 'mountain', elevationOrCapacity: 'K2: 8,611 m', riverSystemId: 'riv-indus' },
-  { id: 'mt-kanchenjunga', category: 'Mountains & Passes', shortLabel: 'Kanchenjunga (8586m) & Nathu La', title: 'Kanchenjunga Peak, Nathu La & Jelep La Passes', state: 'Sikkim', lat: 27.7, lng: 88.14, stars: 3, primaryFact: 'Kanchenjunga (8,586 m) is the highest peak in undisputed Indian territory & India’s ONLY Mixed UNESCO Site.', tributaryOrRange: 'Sikkim Passes: Nathu La & Jelep La.', examHighlight: 'Nanda Devi (7,816 m, Uttarakhand) is the highest peak located wholly inside India.', landscapeType: 'mountain', elevationOrCapacity: '8,586 m · Sikkim', riverSystemId: 'riv-brahmaputra' },
-  { id: 'mt-gurushikhar', category: 'Mountains & Passes', shortLabel: 'Guru Shikhar (1722m Aravalli)', title: 'Aravalli Range — Guru Shikhar (Mt. Abu)', state: 'Rajasthan', lat: 24.65, lng: 72.78, stars: 3, primaryFact: 'Aravalli is the OLDEST fold mountain range in the world (Pre-Cambrian), now a residual mountain.', tributaryOrRange: 'Highest Peak: Guru Shikhar (1,722 m) in Mount Abu (Dilwara Jain Temples).', examHighlight: 'Raisina Hill (Rashtrapati Bhavan, Delhi) is the northernmost tip of the Aravalli Range.', landscapeType: 'mountain', elevationOrCapacity: '1,722 m · Aravalli' },
-  { id: 'mt-anaimudi', category: 'Mountains & Passes', shortLabel: 'Anaimudi (2695m South Highest)', title: 'Anaimudi (2,695m), Doddabetta & Western Ghat Passes', state: 'Kerala & Tamil Nadu', lat: 10.17, lng: 77.06, stars: 3, primaryFact: 'Anaimudi (2,695 m, Annamalai Hills, Kerala) is the HIGHEST peak of South India & Western Ghats.', tributaryOrRange: 'Passes N→S: Thal Ghat, Bhor Ghat, Palghat Gap, Shencottah Gap. Eastern Ghats highest: Jindhagada (1,690 m, AP).', examHighlight: 'Highest in South India = Anaimudi (2,695 m) | Nilgiris highest = Doddabetta (2,637 m).', landscapeType: 'mountain', elevationOrCapacity: 'Anaimudi: 2,695 m', riverSystemId: 'riv-peninsular' },
+  { id: 'mt-zojila', category: 'Mountains & Passes', shortLabel: 'Zoji La Pass (Srinagar–Leh)', title: 'Zoji La Pass (Ladakh)', state: 'Ladakh', lat: 34.28, lng: 75.47, stars: 3, primaryFact: 'Connects Srinagar and Leh along the NH1 highway corridor.', tributaryOrRange: 'Western Himalayan / Ladakh mountain pass.', examHighlight: 'Zoji La connects Srinagar & Leh on NH1.', landscapeType: 'mountain', elevationOrCapacity: 'Srinagar–Leh · NH1', riverSystemId: 'riv-indus' },
+  { id: 'mt-nathula', category: 'Mountains & Passes', shortLabel: 'Nathu La Pass (Sikkim)', title: 'Nathu La Pass (Sikkim)', state: 'Sikkim', lat: 27.39, lng: 88.83, stars: 3, primaryFact: 'High mountain pass in Sikkim connecting India and Tibet along the ancient Silk Route corridor.', tributaryOrRange: 'Eastern Himalayan pass in Sikkim.', examHighlight: 'Nathu La Pass is located in Sikkim.', landscapeType: 'mountain', elevationOrCapacity: 'Sikkim · Silk Route', riverSystemId: 'riv-brahmaputra' },
+  { id: 'mt-mtabu', category: 'Mountains & Passes', shortLabel: 'Mt. Abu Sanctuary (Rajasthan)', title: 'Mount Abu Wildlife Sanctuary & Aravalli Belt', state: 'Rajasthan', lat: 24.6, lng: 72.71, stars: 3, primaryFact: 'Listed under Rajasthan wildlife sanctuaries with Tiger, Leopard, Sambhar, Jungle cat, Wild boar, Pangolin & Sloth bear.', tributaryOrRange: 'Aravalli hill region in Rajasthan.', examHighlight: 'Mt. Abu Wildlife Sanctuary is in Rajasthan.', landscapeType: 'mountain', elevationOrCapacity: 'Mt. Abu · Rajasthan' },
 
-  { id: 'nuc-tarapur', category: 'Nuclear, Ports & ISRO', shortLabel: 'Tarapur (1st Nuclear) & JNPT', title: 'Tarapur Atomic Power Station (1969) & JNPT Port', state: 'Maharashtra', lat: 19.83, lng: 72.66, stars: 3, primaryFact: 'Tarapur (28 Oct 1969) is India’s FIRST commercial Nuclear Power Station; BARC Trombay built Asia’s 1st reactor Apsara.', tributaryOrRange: '7 Operating Nuclear Plants: Tarapur (MH), Rawatbhata (RJ), Kalpakkam (TN), Kudankulam (TN), Narora (UP), Kakrapar (GJ), Kaiga (KA).', examHighlight: 'JNPT (Nhava Sheva) is India’s largest container port; Kandla (GJ) is a tidal port.', landscapeType: 'nuclear', elevationOrCapacity: '1st Nuclear (1969)' },
-  { id: 'nuc-kudankulam', category: 'Nuclear, Ports & ISRO', shortLabel: 'Kudankulam (2000 MW) & Kalpakkam', title: 'Kudankulam (Largest Nuclear) & Kalpakkam PFBR', state: 'Tamil Nadu', lat: 8.17, lng: 77.71, stars: 3, primaryFact: 'Kudankulam (Tirunelveli, VVER-1000 with Russia) is India’s LARGEST Nuclear Power Station (2,000+ MW).', tributaryOrRange: 'Kalpakkam houses 500 MW Prototype Fast Breeder Reactor (PFBR); Chennai is oldest artificial port.', examHighlight: 'Kudankulam = Largest Nuclear Plant | Kalpakkam = Indigenous Fast Breeder.', landscapeType: 'nuclear', elevationOrCapacity: '2,000+ MW (Largest)' },
-  { id: 'isro-sriharikota', category: 'Nuclear, Ports & ISRO', shortLabel: 'ISRO Sriharikota & Vizag Port', title: 'Satish Dhawan Space Centre (SHAR) & Visakhapatnam Port', state: 'Andhra Pradesh', lat: 13.72, lng: 80.23, stars: 3, primaryFact: 'Satish Dhawan Space Centre (Sriharikota AP) is ISRO’s orbital launchport (Chandrayaan-3 landed 23 Aug 2023).', tributaryOrRange: 'Visakhapatnam is India’s DEEPEST landlocked natural port; Kalam Island (Odisha) is DRDO missile range.', examHighlight: 'National Space Day is celebrated every year on 23 August.', landscapeType: 'nuclear', elevationOrCapacity: 'ISRO SHAR · Vizag' },
+  { id: 'nuc-kalpakkam', category: 'Nuclear, Ports & ISRO', shortLabel: 'Kalpakkam Atomic & Arikamedu', title: 'Kalpakkam Atomic Power Project (TN) & Arikamedu (Pondicherry)', state: 'Tamil Nadu & Puducherry', lat: 12.52, lng: 80.17, stars: 3, primaryFact: 'Kalpakkam Project is a major Atomic Power Project in Tamil Nadu; Arikamedu near Pondicherry is noted as an ancient sea-port.', tributaryOrRange: 'Coastal power & historical port sites of south-east India.', examHighlight: 'Kalpakkam is an Atomic Power Project in Tamil Nadu.', landscapeType: 'nuclear', elevationOrCapacity: 'Atomic · Kalpakkam', riverSystemId: 'riv-peninsular' },
 
-  { id: 'unesco-ajanta', category: 'UNESCO, Temples & Dances', shortLabel: 'Ajanta, Ellora & Rani ki Vav', title: 'Ajanta, Ellora (₹20), Rani ki Vav (₹100) & Konark (₹10)', state: 'MH, Gujarat & Odisha', lat: 20.55, lng: 75.7, stars: 3, primaryFact: 'Ajanta & Ellora (Cave 16 Kailasa Temple by Krishna I) were among India’s 1st UNESCO sites (1983).', tributaryOrRange: 'RBI Note Motifs: ₹10 Konark | ₹20 Ellora | ₹50 Hampi | ₹100 Rani ki Vav | ₹200 Sanchi | ₹500 Red Fort.', examHighlight: 'Ahmedabad (2017) was India’s 1st UNESCO World Heritage City, followed by Jaipur (2019).', landscapeType: 'temple', elevationOrCapacity: '1st UNESCO (1983)' },
-  { id: 'unesco-moidams', category: 'UNESCO, Temples & Dances', shortLabel: 'Charaideo Moidams (43rd UNESCO)', title: 'Moidams of Ahom Dynasty (43rd UNESCO Site) & 8 Dances', state: 'Assam & Pan-India', lat: 26.99, lng: 94.87, stars: 3, primaryFact: 'Charaideo Moidams (royal mound-burials of the Ahom Dynasty in Assam) became India’s 43rd UNESCO Site in 2024.', tributaryOrRange: '8 Classical Dances: Bharatanatyam, Kathak, Kathakali, Mohiniyattam, Kuchipudi, Odissi, Manipuri, Sattriya.', examHighlight: '39th Ramappa | 40th Dholavira | 41st Santiniketan | 42nd Hoysala | 43rd Moidams.', landscapeType: 'temple', elevationOrCapacity: '43rd UNESCO (2024)', riverSystemId: 'riv-brahmaputra' },
+  { id: 'unesco-ajanta-aihole', category: 'UNESCO, Temples & Dances', shortLabel: 'Ajanta Caves, Aihole, Badami & Belur', title: 'Ajanta Caves (MH), Aihole, Badami & Belur (Karnataka)', state: 'Maharashtra & Karnataka', lat: 20.55, lng: 75.7, stars: 3, primaryFact: 'Ajanta Caves (29 rock-cut Buddhist caves, 2nd century BC–7th century AD); Aihole, Badami & Belur (Chenna Kesava temple) showcase Chalukyan & Hoysala art.', tributaryOrRange: 'Includes Bhubaneswar (Lingraja, Rajarani, Brahmesvara temples in Odisha), Amaravati & Ayodhya.', examHighlight: 'Belur is famous for the Hoysala-period Chenna Kesava temple.', landscapeType: 'temple', elevationOrCapacity: 'Rock-Cut & Temple Art' },
 
-  { id: 'wb-purulia', category: 'WB JE Special', shortLabel: 'Purulia PSP (900 MW) & DVC', title: 'Purulia Pumped Storage (900 MW), DVC (4 Dams) & Mejia (2,340 MW)', state: 'West Bengal (Purulia & Bankura)', lat: 23.19, lng: 86.09, stars: 3, primaryFact: 'WBSEDCL’s 900 MW (4 × 225 MW reversible Francis turbines) pumped-storage hydro station in Ayodhya Hills, Purulia.', tributaryOrRange: 'DVC (1948): Tilaiya & Maithon (Barakar), Konar, Panchet (Damodar). Mejia (2,340 MW) is WB’s largest thermal plant.', examHighlight: 'WBSEDCL JE Core: Purulia PSP capacity = 900 MW (4 × 225 MW).', landscapeType: 'dam', elevationOrCapacity: '900 MW (4×225 MW)', riverSystemId: 'riv-ganga' },
-  { id: 'wb-farakka', category: 'WB JE Special', shortLabel: 'Farakka (2100 MW) & Sundarbans', title: 'Farakka Barrage, NTPC Farakka (2,100 MW) & Sundarbans Ramsar', state: 'West Bengal (Murshidabad & S24P)', lat: 24.8, lng: 87.93, stars: 3, primaryFact: 'Farakka Barrage (1975) diverts Ganga water into the Feeder Canal to flush the Bhagirathi-Hooghly river.', tributaryOrRange: 'Sundarbans (4,230 sq km) is India’s LARGEST Ramsar Wetland, UNESCO Site (1987) & Tiger Reserve.', examHighlight: 'Santiniketan (Birbhum) became India’s 41st UNESCO World Heritage Site in 2023.', landscapeType: 'park', elevationOrCapacity: 'Sundarbans: 4,230 km²', riverSystemId: 'riv-ganga' },
-  { id: 'wb-sandakphu', category: 'WB JE Special', shortLabel: 'Sandakphu (3636m) & Sidrapong (1897)', title: 'Sandakphu Peak, Sidrapong (1st Hydro) & Rammam/Teesta Hydro', state: 'West Bengal (Darjeeling & Kalimpong)', lat: 27.1, lng: 88.0, stars: 3, primaryFact: 'Sandakphu (3,636 m, Singalila Ridge) is the HIGHEST peak of West Bengal; Sidrapong (1897) was India’s 1st hydro plant.', tributaryOrRange: 'North WB Hydro: Rammam Stage-II (51 MW), Jaldhaka (44 MW) & Teesta Low Dam (TLDP III & IV).', examHighlight: '5 North WB NPs: Singalila, Neora Valley, Gorumara, Jaldapara (Rhino) & Buxa.', landscapeType: 'mountain', elevationOrCapacity: 'Sandakphu: 3,636 m', riverSystemId: 'riv-brahmaputra' },
+  { id: 'wb-dvc-kolkata', category: 'WB JE Special', shortLabel: 'DVC, Kolkata, Sunderbans & Chittaranjan', title: 'Damodar Valley Project, Sunderbans, Kolkata (Hooghly) & Chittaranjan', state: 'West Bengal', lat: 22.57, lng: 88.36, stars: 3, primaryFact: 'Damodar Valley Project spans Jharkhand & West Bengal; Sunderbans NP & Ramsar wetland, Jaldapara Sanctuary, Kolkata (Hooghly) & Chittaranjan (Locomotives) are key WB landmarks.', tributaryOrRange: 'Includes East Kolkata Wetlands & Bakkhali in Ramsar wetlands list.', examHighlight: 'Chittaranjan (West Bengal) is associated with Locomotives; Kolkata lies on Hooghly.', landscapeType: 'dam', elevationOrCapacity: 'WB · DVC & Sunderbans', riverSystemId: 'riv-ganga' },
 ]
 
 function latLngToXY(lat: number, lng: number): { x: number; y: number } {
@@ -529,7 +561,7 @@ function IsometricTerrainBlock({ type, metric }: { type: string; metric: string 
 }
 
 // ============================================================================
-// 4. MAIN PAGE COMPONENT (VOLT OS FIRST + MINIMAL SWITCH + 3 TABS)
+// 4. MAIN PAGE COMPONENT (VOLT OS FIRST + BOTTOM-RIGHT SWITCH + 3 TABS)
 // ============================================================================
 export default function Page() {
   const [mounted, setMounted] = useState(false)
@@ -537,13 +569,12 @@ export default function Page() {
     setMounted(true)
   }, [])
 
-  // Starts false so Volt OS opens first with a minimal switch pill at the top
   const [studioOpen, setStudioOpen] = useState(false)
   const [activeTab, setActiveTab] = useState<'chrono' | 'vault' | 'topograph'>('chrono')
 
   // Tab 1 State
   const [selectedEra, setSelectedEra] = useState<Era>('Modern')
-  const [selectedLeafId, setSelectedLeafId] = useState<string>('hl-1919')
+  const [selectedLeafId, setSelectedLeafId] = useState<string>('hl-1919-jallianwala')
   const [showChronoPopup, setShowChronoPopup] = useState<boolean>(true)
   const [quizOpen, setQuizOpen] = useState<boolean>(false)
   const [pickedOpt, setPickedOpt] = useState<number | null>(null)
@@ -590,11 +621,10 @@ export default function Page() {
   )
 
   const visiblePins = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase()
     return GEO_STATIC_PINS.filter((p) => {
-      const catMatch = topoFilter === 'All' || p.category === topoFilter
-      if (!catMatch) return false
-      if (!searchQuery.trim()) return true
-      const q = searchQuery.toLowerCase()
+      if (topoFilter !== 'All' && p.category !== topoFilter) return false
+      if (!q) return true
       return (
         p.shortLabel.toLowerCase().includes(q) ||
         p.title.toLowerCase().includes(q) ||
@@ -702,15 +732,15 @@ export default function Page() {
       {/* 1. VOLT OS DESKTOP */}
       <Desktop />
 
-      {/* 2. MINIMAL SWITCH PILL AT TOP OF VOLT OS */}
+      {/* 2. BOTTOM-RIGHT SWITCH PILL ON VOLT OS */}
       {!studioOpen && (
-        <div className="fixed top-2.5 left-1/2 z-[90] -translate-x-1/2">
+        <div className="fixed right-4 bottom-4 z-[9990]">
           <button
             onClick={() => setStudioOpen(true)}
             title="Open Chrono-Roots, Constitutional Vault & 3D TopoGraph"
-            className="flex items-center gap-1.5 rounded-full border border-cyan-400/50 bg-slate-950/85 px-3 py-1 text-[11px] font-semibold tracking-wide text-cyan-200 shadow-[0_0_16px_rgba(34,211,238,0.25)] backdrop-blur-md transition hover:border-cyan-300 hover:bg-slate-900 hover:text-white"
+            className="flex items-center gap-2 rounded-full border border-cyan-300 bg-slate-950/95 px-4 py-2 text-xs font-bold tracking-wide text-cyan-100 shadow-[0_0_24px_rgba(34,211,238,0.45)] backdrop-blur-md transition hover:border-white hover:bg-cyan-500/25 hover:text-white"
           >
-            <span className="size-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]" />
+            <span className="size-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]" />
             GK/GS Studio
           </button>
         </div>
@@ -788,6 +818,8 @@ export default function Page() {
                         if (firstHub?.historyLeaves[0]) {
                           setSelectedLeafId(firstHub.historyLeaves[0].id)
                           setShowChronoPopup(true)
+                          setPickedOpt(null)
+                          setQuizChecked(false)
                         }
                       }}
                       className={`rounded-lg py-1 text-[11px] font-bold transition ${
@@ -1072,7 +1104,7 @@ export default function Page() {
                           {activeLocker.title} · {activeLocker.articlesRange}
                         </h3>
                         <p className="mt-0.5 text-xs text-amber-200/85">
-                          <strong>Source:</strong> {activeLocker.borrowedFrom} | <strong>Schedule:</strong> {activeLocker.scheduleLink}
+                          <strong>Basis:</strong> {activeLocker.borrowedFrom} | <strong>Schedule/Notes:</strong> {activeLocker.scheduleLink}
                         </p>
                       </div>
 
@@ -1118,7 +1150,7 @@ export default function Page() {
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search bird, park, dam, state..."
+                  placeholder="Search park, dam, Ramsar, state..."
                   className="w-full rounded-lg border border-slate-700 bg-slate-950/90 px-2.5 py-1.5 text-xs text-white placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none"
                 />
 
@@ -1335,7 +1367,7 @@ export default function Page() {
                     <p className="text-xs leading-relaxed text-slate-200"><strong className="text-cyan-300">Core Fact:</strong> {activePin.primaryFact}</p>
                     <p className="text-xs leading-relaxed text-amber-200/95"><strong className="text-amber-300">System:</strong> {activePin.tributaryOrRange}</p>
                     <p className="rounded-lg border border-emerald-500/40 bg-emerald-950/50 px-2.5 py-1.5 text-[11px] text-emerald-200">
-                      <strong>⚡ JE Pointer:</strong> {activePin.examHighlight}
+                      <strong>⚡ Exam Pointer:</strong> {activePin.examHighlight}
                     </p>
                   </div>
                   <IsometricTerrainBlock type={activePin.landscapeType} metric={activePin.elevationOrCapacity} />
